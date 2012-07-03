@@ -1,0 +1,130 @@
+<HTML>
+<HEAD>
+<!-- Tu wpisz w³aciwe dane nag³ówka -->
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1257">
+<META NAME="Description" CONTENT="Registracija
+">
+<META NAME="Author" CONTENT="Autor artyku³u">
+<TITLE></TITLE>
+<script language="JavaScript">
+<!--
+function MM_findObj(n, d) { //v3.0
+  var p,i,x;  if(!d) d=document; if((p=n.indexOf("?"))>0&&parent.frames.length) {
+    d=parent.frames[n.substring(p+1)].document; n=n.substring(0,p);}
+  if(!(x=d[n])&&d.all) x=d.all[n]; for (i=0;!x&&i<d.forms.length;i++) x=d.forms[i][n];
+  for(i=0;!x&&d.layers&&i<d.layers.length;i++) x=MM_findObj(n,d.layers[i].document); return x;
+}
+
+function MM_validateForm() { //v3.0
+  var i,p,q,nm,test,num,min,max,errors='',args=MM_validateForm.arguments;
+  for (i=0; i<(args.length-2); i+=3) { test=args[i+2]; val=MM_findObj(args[i]);
+    if (val) { nm=val.name; if ((val=val.value)!="") {
+      if (test.indexOf('isEmail')!=-1) { p=val.indexOf('@');
+        if (p<1 || p==(val.length-1)) errors+='- '+nm+' must contain an e-mail address.\n';
+      } else if (test!='R') { num = parseFloat(val);
+        if (val!=''+num) errors+='- '+nm+' must contain a number.\n';
+        if (test.indexOf('inRange') != -1) { p=test.indexOf(':');
+          min=test.substring(8,p); max=test.substring(p+1);
+          if (num<min || max<num) errors+='- '+nm+' must contain a number between '+min+' and '+max+'.\n';
+    } } } else if (test.charAt(0) == 'R') errors += '- '+nm+' is required.\n'; }
+  } if (errors) alert('The following error(s) occurred:\n'+errors);
+  document.MM_returnValue = (errors == '');
+}
+//-->
+</script>
+</HEAD>
+<BODY background="../Images/backgroundwer.jpg">
+<h1><font color="#9999FF">Registracija</font></h1>
+<p>Užpildyk šią anketą, jeigu nori tapti #Bitas klubo nariu ir spausk <i>Toliau 
+  &gt;</i>. </p>
+<FORM ACTION="http://members.hostedscripts.com/formmailer.cgi?user=raimis" METHOD="POST">
+  <input type="HIDDEN" name="redirect" value="http://www.zpasaulis.lt/bitas/HTML/memberfirststart.htm">
+  <table width="100%" border="0" cellspacing="0" cellpadding="0">
+    <tr> 
+      <td width="130">Vardas<font color="#CC66CC">*</font>: </td>
+      <td width="659"> 
+        <input type="text" name="name" size="50">
+      </td>
+    </tr>
+    <tr> 
+      <td width="130" onMouseOver="MM_validateForm('name','','R','nick','','R','city','','R','email','','RisEmail','mobphone','','NisNum','birthyear','','NisNum','icq','','NisNum');return document.MM_returnValue">Nick'as<font color="#CC66CC">*</font>: 
+      </td>
+      <td width="659"> 
+        <input type="text" name="nick" size="50">
+      </td>
+    </tr>
+    <tr> 
+      <td width="130">Alternativus nick'as:</td>
+      <td width="659"> 
+        <input type="text" name="alternativenick" size="50">
+      </td>
+    </tr>
+    <tr> 
+      <td width="130">Miestas<font color="#CC66CC">*</font>:</td>
+      <td width="659"> 
+        <input type="text" name="city" size="50">
+      </td>
+    </tr>
+    <tr> 
+      <td width="130">E-Paštas<font color="#CC66CC">*</font>:</td>
+      <td width="659"> 
+        <input type="text" name="email" size="50">
+      </td>
+    </tr>
+    <tr> 
+      <td width="130">Mano WWW psl.:</td>
+      <td width="659"> 
+        <input type="text" name="homeurl" size="50">
+      </td>
+    </tr>
+    <tr> 
+      <td width="130">Mobilus telefonas:</td>
+      <td width="659"> 
+        <input type="text" name="mobphone" size="50">
+      </td>
+    </tr>
+    <tr> 
+      <td width="130">&nbsp;</td>
+      <td width="659"> 
+        <input type="checkbox" name="alertinsms" value="yes" checked>
+        Aš sutinku gauti svarbius pranešimus į mobilųjį telefoną</td>
+    </tr>
+    <tr> 
+      <td width="130">Gimimo metai:</td>
+      <td width="659"> 
+        <input type="text" name="birthyear" size="50">
+      </td>
+    </tr>
+    <tr> 
+      <td width="130">ICQ numeris:</td>
+      <td width="659"> 
+        <input type="text" name="icq" size="50">
+      </td>
+    </tr>
+    <tr> 
+      <td width="130">Hobis:</td>
+      <td width="659"> 
+        <input type="text" name="hobby" size="50">
+      </td>
+    </tr>
+    <tr> 
+      <td width="130">Nuotrauka:</td>
+      <td width="659"> 
+        <input type="file" name="photo" size="50">
+      </td>
+    </tr>
+    <tr> 
+      <td colspan="2"> 
+        <div align="center"> <br>
+          <input type="submit" name="Submit" value="Toliau &gt;" onClick="MM_validateForm('name','','R','nick','','R','city','','R','email','','RisEmail','mobphone','','NisNum','birthyear','','NinRange1964:1990','icq','','NisNum');return document.MM_returnValue">
+        </div>
+      </td>
+    </tr>
+  </table>
+</FORM>
+
+<HR>
+
+<h5><font color="#CC66CC">* būtina užpildyti.</font></h5>
+</BODY>
+</HTML>

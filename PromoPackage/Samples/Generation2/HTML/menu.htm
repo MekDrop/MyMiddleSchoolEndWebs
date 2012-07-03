@@ -1,0 +1,127 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1257">
+<link rel="stylesheet" href="../CSS/nsmnu.css" type="text/css">
+		<csactions>
+			<csaction name="2879C91" class="Go Last Page" type="unbound">
+			<csaction name="28DD5F2" class="Navigate History" type="unbound" val0="1">
+		</csactions>
+		<csscriptdict>
+			<script><!--
+CSStopExecution = false;
+function CSAction(array) { 
+	return CSAction2(CSAct, array);
+}
+function CSAction2(fct, array) { 
+	var result;
+	for (var i=0;i<array.length;i++) {
+		if(CSStopExecution) return false; 
+		var actArray = fct[array[i]];
+		if(actArray == null) return false; 
+		var tempArray = new Array;
+		for(var j=1;j<actArray.length;j++) {
+			if((actArray[j] != null) && (typeof(actArray[j]) == "object") && (actArray[j].length == 2)) {
+				if(actArray[j][0] == "VAR") {
+					tempArray[j] = CSStateArray[actArray[j][1]];
+				}
+				else {
+					if(actArray[j][0] == "ACT") {
+						tempArray[j] = CSAction(new Array(new String(actArray[j][1])));
+					}
+				else
+					tempArray[j] = actArray[j];
+				}
+			}
+			else
+				tempArray[j] = actArray[j];
+		}			
+		result = actArray[0](tempArray);
+	}
+	return result;
+}
+CSAct = new Object;
+
+function CSGoBack1() { history.back() }
+function CSHistoryGo(action) { history.go(action[1]); }
+
+// --></script>
+		</csscriptdict>
+		<csactiondict>
+			
+<script>
+<!--
+<!--
+CSAct[/*CMP*/ '2879C91'] = new Array(CSGoBack1);
+CSAct[/*CMP*/ '28DD5F2'] = new Array(CSHistoryGo,1);
+
+// -->
+
+function MM_callJS(jsStr) { //v2.0
+  return eval(jsStr)
+}
+
+function MM_displayStatusMsg(msgStr) { //v1.0
+  status=msgStr;
+  document.MM_returnValue = true;
+}
+//-->
+</script>
+		</csactiondict>
+	</head>
+<style type="text/css">
+iframe {scrollbar-3d-light-color: blue; scrollbar-arrow-color: blue; scrollbar-base-color: blue; scrollbar-dark-shadow-color: blue; scrollbar-face-color: blue; scrollbar-highlight-color: blue; scrollbar-shadow-color: blue; ruby-position: inline; ruby-overhang: whitespace; ruby-align: left; background: blue; border: none; display: run-in}
+</style>
+<body bgcolor="#FFFFFF" background="../Images/bck.jpg" leftmargin="0" topmargin="0" link="#FFFF00" vlink="#FFFF00" alink="#FFFF00">
+<div align="center"> 
+  <table width="100%" border="0" cellspacing="0" cellpadding="0" height="100%">
+    <tr align="left" valign="top"> 
+      <td width="166" height="80" align="center" valign="middle"> 
+        <div align="center"><img src="../Images/ircchanel.png" width="145" height="64"></div>
+      </td>
+      <td width="3" background="../Images/shadow.jpg" rowspan="3">&nbsp;</td>
+    </tr>
+    <tr align="left" valign="top"> 
+      <td width="166" height="295"> 
+        <table border="0" cellspacing="0" cellpadding="5" background="../Images/leftframebackground.jpg" align="center" width="146" height="260">
+          <tr align="center" valign="top" height="22"> 
+            <td width="10%" height="22" valign="top" align="center"> 
+              <div align="center"> <csobj w="36" h="19" t="ActionBox" name="2879C91"> 
+                </csobj><font face="Andy"><b><font face="Ebola" color="#FFFF33"><a href="#" onClick="MM_callJS('CSAction(new Array(/*CMP*/ \'2879C91\'));')" onMouseOver="MM_displayStatusMsg('Atgal');return document.MM_returnValue" onMouseOut="MM_displayStatusMsg('');return document.MM_returnValue">&lt;&lt;&lt;</a><font face="Andy"> 
+                </font></font><font color="#99FF00" face="Andy">MENU</font></b></font> 
+                <font face="Ebola" color="#FFFF33"><a href="#" onClick="MM_callJS('CSAction(new Array(/*CMP*/ \'28DD5F2\'));')" onMouseOver="MM_displayStatusMsg('Toliau');return document.MM_returnValue" onMouseOut="MM_displayStatusMsg('');return document.MM_returnValue">&gt;&gt;&gt;<csobj w="36" h="19" t="ActionBox" name="28DD5F2"></csobj></a><br>
+                </font> </div>
+              <iframe src="defaultmenu.htm" width="124" height="219" name="frmMenu" frameborder="no" scrolling="yes" noresize id="frameMenu" border="0" style="word-break: keep-all; visibility: visible; background: fixed"> 
+              Jūsų naršyklė prastai interpretuoja rėmelius... <br>
+              arba ši funkcija pas jus yra išjungta. </iframe> </td>
+          </tr>
+        </table>
+      </td>
+    </tr>
+    <tr align="left" valign="top"> 
+      <td width="166" align="center" valign="bottom"> 
+        <!-- Start  counter code -->
+        <script language="javascript"><!-- 
+srb="na"; srw="na"; srh="na";
+//--> </script>
+        <script language="javascript1.2"><!-- 
+srw = screen.width; srh = screen.height;
+srb = (navigator.appName!="Netscape") ? screen.colorDepth : screen.pixelDepth;
+//--> </script>
+        <script language="JavaScript">
+<!-- 
+   document.write("<A HREF=\"http://www.top100.lt\" target=\"_top\">", 
+           "<img src=\"http://www.top100.lt/cgi-bin/", 
+           "count?id=17716&ctype=full&ccolor=0099FF&resolution="+srw+"x"+srh+"&color="+srb+"&", 
+           "referer="+escape(document.referrer)+"\" height=31 border=0", 
+           " width=88></A>");
+//--> 
+</script>
+        <noscript> <a href="http://www.top100.lt" target="_top"><img src="http://www.top100.lt/cgi-bin/count?id=17716&ctype=full&ccolor=336633&resolution=naxna&color=na&referer=" border=0 alt="Top 100"></a> 
+        </noscript> 
+        <!-- End counter code -->
+      </td>
+    </tr>
+  </table>
+</div>
+</body>
+</html>

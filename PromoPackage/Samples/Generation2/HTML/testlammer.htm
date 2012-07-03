@@ -1,0 +1,409 @@
+<html><head>
+<title>#Bitas - IRC Kanalas</title>
+<meta http-equiv="Content-Type" content="text/html; ">
+<style type="text/css">
+<!--
+@import url(../CSS/body-fixed.css);
+-->
+</style>
+<link rel="stylesheet" href="../CSS/body-fixed.css">
+<script language="JavaScript">
+<!--
+function MM_findObj(n, d) { //v3.0
+  var p,i,x;  if(!d) d=document; if((p=n.indexOf("?"))>0&&parent.frames.length) {
+    d=parent.frames[n.substring(p+1)].document; n=n.substring(0,p);}
+  if(!(x=d[n])&&d.all) x=d.all[n]; for (i=0;!x&&i<d.forms.length;i++) x=d.forms[i][n];
+  for(i=0;!x&&d.layers&&i<d.layers.length;i++) x=MM_findObj(n,d.layers[i].document); return x;
+}
+
+function MM_validateForm() { //v3.0
+  var i,p,q,nm,test,num,min,max,errors='',args=MM_validateForm.arguments;
+  for (i=0; i<(args.length-2); i+=3) { test=args[i+2]; val=MM_findObj(args[i]);
+    if (val) { nm=val.name; if ((val=val.value)!="") {
+      if (test.indexOf('isEmail')!=-1) { p=val.indexOf('@');
+        if (p<1 || p==(val.length-1)) errors+='- '+nm+' must contain an e-mail address.\n';
+      } else if (test!='R') { num = parseFloat(val);
+        if (val!=''+num) errors+='- '+nm+' must contain a number.\n';
+        if (test.indexOf('inRange') != -1) { p=test.indexOf(':');
+          min=test.substring(8,p); max=test.substring(p+1);
+          if (num<min || max<num) errors+='- '+nm+' must contain a number between '+min+' and '+max+'.\n';
+    } } } else if (test.charAt(0) == 'R') errors += '- '+nm+' is required.\n'; }
+  } if (errors) alert('The following error(s) occurred:\n'+errors);
+  document.MM_returnValue = (errors == '');
+}
+//-->
+</script>
+</head><body bgcolor="#ffffff" background="../Images/backgroundwer.jpg" leftmargin="3" topmargin="3"><!--METADATA TYPE="MsHtmlPageDesigner" startspan--><object id="DHTMLPage1" classid="clsid:1032C6DA-1B13-11D6-A413-F9C2DCFF4516" width=0 height=0></object><!--METADATA TYPE="MsHtmlPageDesigner" endspan-->
+<p><b>Taisyklës:</B> Atsakyk á ðio testo klausimus, spausk <i>Toliau</I> ir suþinok savo 
+diagnozæ.</P>
+<form method="post" action="../lammertest.asp" name="lammertest">
+  <ol>
+    <li> Kompiuterio paskirtis:<br>
+      <input type="radio" name="1" value="1">
+      Pramogos <br>
+      <input type="radio" name="1" value="1">
+      Darbas <br>
+      <input type="radio" name="1" value="yes"> Darbas ir pramogos 
+    <li>Su kuria klaviðø kombinacija galima "iðkirpti" tekstà ið dokumento?<br>
+      <select name="cutkey1">
+        <option value="yes">Ctrl</OPTION>
+        <option value="alt">Alt</OPTION>
+        <option value="shift" selected>Shift</OPTION></SELECT>
+      + 
+      <select name="cutkey2">
+        <option selected>q</OPTION>
+        <option>w</OPTION>
+        <option>e</OPTION>
+        <option>r</OPTION>
+        <option>t</OPTION>
+        <option>y</OPTION>
+        <option>u</OPTION>
+        <option>i</OPTION>
+        <option>o</OPTION>
+        <option>p</OPTION>
+        <option>[</OPTION>
+        <option>]</OPTION>
+        <option>a</OPTION>
+        <option>s</OPTION>
+        <option>d</OPTION>
+        <option>f</OPTION>
+        <option>g</OPTION>
+        <option>h</OPTION>
+        <option>j</OPTION>
+        <option>k</OPTION>
+        <option>l</OPTION>
+        <option>;</OPTION>
+        <option>:</OPTION>
+        <option>{</OPTION>
+        <option>}</OPTION>
+        <option>'</OPTION>
+        <option>"</OPTION>
+        <option>z</OPTION>
+        <option value="yes">x</OPTION>
+        <option>c</OPTION>
+        <option>v</OPTION>
+        <option>b</OPTION>
+        <option>n</OPTION>
+        <option>m</OPTION>
+        <option>,</OPTION>
+        <option>&lt;</OPTION>
+        <option>.</OPTION>
+        <option>&gt;</OPTION>
+        <option>/</OPTION>
+        <option>?</OPTION>
+        <option>~</OPTION>
+        <option>`</OPTION>
+        <option>1</OPTION>
+        <option>2</OPTION>
+        <option>3</OPTION>
+        <option>4</OPTION>
+        <option>5</OPTION>
+        <option>6</OPTION>
+        <option>7</OPTION>
+        <option>8</OPTION>
+        <option>9</OPTION>
+        <option>0</OPTION>
+        <option>-</OPTION>
+        <option>=</OPTION>
+        <option>\</OPTION>
+        <option>!</OPTION>
+        <option>@</OPTION>
+        <option>#</OPTION>
+        <option>$</OPTION>
+        <option>%</OPTION>
+        <option>^</OPTION>
+        <option>&amp;</OPTION>
+        <option>*</OPTION>
+        <option>(</OPTION>
+        <option>)</OPTION>
+        <option>_</OPTION>
+        <option>+</OPTION>
+        <option>|</OPTION></SELECT>
+    <li>Kas yra internetas?<br>
+      <input type="radio" name="3" value="yes">
+      Pasaulinis kompiuteriø tinklas<br>
+      <input type="radio" name="3" value="3">
+      Programa<br>
+      <input type="radio" name="3" value="3">
+      Kita... <br>
+      <input type="radio" name="3" value="3"> Neþinau 
+    <li>Kam skirta <i>Microsoft Excel 
+  </I>programa?<br>
+      <input type="radio" name="4" value="4">
+      Tekstams redaguoti<br>
+      <input type="radio" name="4" value="yes">
+      Elektroninëms lentelëms redaguoti<br>
+      <input type="radio" name="4" value="4">
+      Kurti prezentacijas<br>
+      <input type="radio" name="4" value="4">
+      Kurti ir redaguoti duomenø bazes<br>
+      <input type="radio" name="4" value="4"> Kurti ir redaguoti WEB puslapius 
+    <li>Kam skirta <i>Microsoft Word 
+  </I>programa?<br>
+      <input type="radio" name="5" value="yes">
+      Tekstams redaguoti<br>
+      <input type="radio" name="5" value="5">
+      Elektroninëms lentelëms redaguoti<br>
+      <input type="radio" name="5" value="5">
+      Kurti prezentacijas<br>
+      <input type="radio" name="5" value="5">
+      Kurti ir redaguoti duomenø bazes<br>
+      <input type="radio" name="5" value="5"> Kurti ir redaguoti WEB puslapius 
+    <li>Kam skirta <i>Microsoft 
+  FrontPage </I>programa?<br>
+      <input type="radio" name="6" value="6">
+      Tekstams redaguoti<br>
+      <input type="radio" name="6" value="6">
+      Elektroninëms lentelëms redaguoti<br>
+      <input type="radio" name="6" value="6">
+      Kurti prezentacijas<br>
+      <input type="radio" name="6" value="6">
+      Kurti ir redaguoti duomenø bazes<br>
+      <input type="radio" name="6" value="yes"> Kurti ir redaguoti WEB puslapius 
+    <li>Kam skirta <i>Microsoft Access 
+  </I>programa?<br>
+      <input type="radio" name="7" value="7">
+      Tekstams redaguoti<br>
+      <input type="radio" name="7" value="7">
+      Elektroninëms lentelëms redaguoti<br>
+      <input type="radio" name="7" value="7">
+      Kurti prezentacijas<br>
+      <input type="radio" name="7" value="yes">
+      Kurti ir redaguoti duomenø bazes<br>
+      <input type="radio" name="7" value="7"> Kurti ir redaguoti WEB puslapius 
+    <li>Kam skirta <i>Microsoft 
+  PowerPoint </I>programa?<br>
+      <input type="radio" name="8" value="8">
+      Tekstams redaguoti<br>
+      <input type="radio" name="8" value="8">
+      Elektroninëms lentelëms redaguoti<br>
+      <input type="radio" name="8" value="yes">
+      Kurti prezentacijas<br>
+      <input type="radio" name="8" value="8">
+      Kurti ir redaguoti duomenø bazes<br>
+      <input type="radio" name="8" value="8"> Kurti ir redaguoti WEB puslapius 
+    <li>Kokià interneto narðyklë naudoji?<br>
+      <input type="radio" name="9" value="yes">
+      Microsoft Internet Explorer<br>
+      <input type="radio" name="9" value="yes">
+      Netscape Navigator<br>
+      <input type="radio" name="9" value="yes">
+      Netscape Communicator<br>
+      <input type="radio" name="9" value="yes">
+      Mozilla<br>
+      <input type="radio" name="9" value="yes">
+      Opera<br>
+      <input type="radio" name="9" value="cool">
+      Lynx<br>
+      <input type="radio" name="9" value="cool">
+      Kità...<br>
+      <input type="radio" name="9" value="9"> Neþinau 
+    <li>Kokia <i>MiRC</I> programos paskirtis?<br>
+      <input type="radio" name="10" value="10">
+      Tekstø redagavimas<br>
+      <input type="radio" name="10" value="10">
+      Video failø redagavimas<br>
+      <input type="radio" name="10" value="10">
+      HTML failø redagavimas<br>
+      <input type="radio" name="10" value="yes"> Tekstinai pokalbiai internetu 
+    <li>Kas per kas yra <i>C++</I>?<br>
+      <input type="radio" name="11" value="11">
+      Dokumentø redaktorius<br>
+      <input type="radio" name="11" value="yes">
+      Programavimo kalba<br>
+      <input type="radio" name="11" value="11">
+      Muzikos redaktorius<br>
+      <input type="radio" name="11" value="11"> Muzikos grotuvas 
+    <li>Kas per kas yra <i>Turbo 
+  Pascal</I>?<br>
+      <input type="radio" name="12" value="12">
+      Dokumentø redaktorius<br>
+      <input type="radio" name="12" value="yes">
+      Programavimo kalba<br>
+      <input type="radio" name="12" value="12">
+      Muzikos redaktorius<br>
+      <input type="radio" name="12" value="12"> Muzikos grotuvas 
+    <li>Kurià operacinæ sistemà naudoji?<br>
+      <input type="radio" name="13" value="yes">
+      Windows 95<br>
+      <input type="radio" name="13" value="yes">
+      Windows 98<br>
+      <input type="radio" name="13" value="13">
+      Windows 3.1<br>
+      <input type="radio" name="13" value="yes">
+      Windows 3.11<br>
+      <input type="radio" name="13" value="13">
+      Windows 2<br>
+      <input type="radio" name="13" value="yes">
+      Windows ME<br>
+      <input type="radio" name="13" value="yes">
+      Windows XP Home Edition<br>
+      <input type="radio" name="13" value="yes">
+      Windows XP Professional<br>
+      <input type="radio" name="13" value="yes">
+      Windows XP Server<br>
+      <input type="radio" name="13" value="yes">
+      Windows XP Advanced Server<br>
+      <input type="radio" name="13" value="yes">
+      Windows 2000 Professional<br>
+      <input type="radio" name="13" value="yes">
+      Windows 2000 Server<br>
+      <input type="radio" name="13" value="yes">
+      Windows 2000 Advanced Server<br>
+      <input type="radio" name="13" value="yes">
+      Windows NT 4 Workstation<br>
+      <input type="radio" name="13" value="yes">
+      Windows NT 4 Server<br>
+      <input type="radio" name="13" value="yes">
+      Windows NT 3.xx<br>
+      <input type="radio" name="13" value="yes">
+      Windows NT 2.xx<br>
+      <input type="radio" name="13" value="13">
+      MS-DOS<br>
+      <input type="radio" name="13" value="cool">
+      Linux<br>
+      <input type="radio" name="13" value="yes">
+      MacOS<br>
+      <input type="radio" name="13" value="yes">
+      BeOS<br>
+      <input type="radio" name="13" value="cool">
+      BSD <br>
+      <input type="radio" name="13" value="cool">
+      FreeBSD <br>
+      <input type="radio" name="13" value="13">
+      PC-DOS <br>
+      <input type="radio" name="13" value="13">
+      OpenDOS <br>
+      <input type="radio" name="13" value="admin">
+      Novell Netware<br>
+      <input type="radio" name="13" value="cool">
+      Unix<br>
+      <input type="radio" name="13" value="admin">
+      Soliaris<br>
+      <input type="radio" name="13" value="yes">
+      OS/2 Warp<br>
+      <input type="radio" name="13" value="yes">
+      MacOS X<br>
+      <input type="radio" name="13" value="other">
+      Kità<br>
+      <input type="radio" name="13" value="13"> Net neþinau... 
+    <li>Kiek baitø yra vienas kilobaitas?<br>
+      <input name="bytestokb" >
+    <li>Kiek bitø yra vienas baitas?<br>
+      <input name="bitstobytes" >
+    <li>Kas yra hakeris?<br>
+      <input type="radio" name="18" value="yes">
+      Þmogus, kuris lauþiasis á kito þmogaus kompiuterá per tinklà.<br>
+      <input type="radio" name="18" value="18">
+      Þmogus, kuris ið esmës beveik nieko neþino apie kompiuterius.<br>
+      <input type="radio" name="18" value="18"> Þmogus, kuris "nulauþinëja" legalias programas. 
+    <li>Kas yra lameris?<br>
+      <input type="radio" name="19" value="19">
+      Þmogus, kuris lauþiasis á kito þmogaus kompiuterá per tinklà.<br>
+      <input type="radio" name="19" value="yes">
+      Þmogus, kuris ið esmës beveik nieko neþino apie kompiuterius.<br>
+      <input type="radio" name="19" value="19"> Þmogus, kuris "nulauþinëja" legalias programas. 
+    <li>Kas yra krekeris?<br>
+      <input type="radio" name="18" value="18">
+      Þmogus, kuris lauþiasis á kito þmogaus kompiuterá per tinklà.<br>
+      <input type="radio" name="18" value="18">
+      Þmogus, kuris ið esmës beveik nieko neþino apie kompiuterius.<br>
+      <input type="radio" name="18" value="yes"> Þmogus, kuris "nulauþinëja" legalias programas. 
+    <li>Kas yra sausainëliai(<i>cookie</I>)?<br>
+      <input type="radio" name="19" value="19">
+      Programos klaida.<br>
+      <input type="radio" name="19" value="yes">
+      Tekstiniai duomenys, kuriuos bet kokia interneto svetainë gali áraðyti á 
+      narðanèio þmogaus po jà kompiuterio kietàjá diskà.<br>
+      <input type="radio" name="19" value="19">
+      Ið IT gautos <i>shareware</I> programos.<br>
+      <input type="radio" name="19" value="19"> 
+  Neþinau. 
+    <li>Kas yra DirectX?<br>
+      <input type="radio" name="20" value="yes">
+      Windows API rinkinys skirtas geresniam suderinamumui su skirtinga aparatine 
+      áranga.<br>
+      <input type="radio" name="20" value="20">
+      <i>Sun</I> sukurtas standartas, skirtas apraðyti 3D vaizdams.<br>
+      <input type="radio" name="20" value="20">
+      <i>Microsoft</I> sukurta terpë, skirta vienos programos funkcijoms áterpti 
+      á kitas. <br>
+      <input type="radio" name="20" value="20"> 
+  Ei, baikit, þmonës, su ta moksline fantastika!!! 
+    <li>Kas yra MacOS? <br>
+      <input type="radio" name="21" value="yes">
+      Operacinë sistema <br>
+      <input type="radio" name="21" value="21">
+      Interneto narðyklë<br>
+      <input type="radio" name="21" value="21">
+      Programavimo kalba<br>
+      <input type="radio" name="21" value="21">
+      Kompiuteris<br>
+      <input type="radio" name="21" value="21">
+      Kompiliatorius<br>
+      <input type="radio" name="21" value="21"> Sakau, baikit !!!!!!!!!!!!!!!!!!!!!!!!!!!... 
+    <li>Kuris ið ðiø logotipø yra <i>Linux </I>logotipas? 
+      <table width="193" border="0" cellspacing="0" cellpadding="0">
+        <tr> 
+          <td width="64"> 
+            <div align="center"><IMG height=32 src="../Images/pingvinas.gif" width=32></DIV></TD>
+          <td width="73"> 
+            <div align="center"><IMG height=32 src="../Images/langas.gif" width=32></DIV></TD>
+          <td width="56"> 
+            <div align="center"><IMG height=25 src="../Images/be.gif" width=29></DIV></TD></TR>
+        <tr> 
+          <td width="64"> 
+            <input type="radio" name="25" value="yes"> Ðitas </TD>
+          <td width="73"> 
+            <input type="radio" name="25" value="25"> Ðitas </TD>
+          <td width="56"> 
+            <input type="radio" name="25" value="25"> Ðitas </TD></TR></TABLE>
+    <li>Kada paskutiná kartà administravai kito þmogaus kompà be jo sutikimo?<br>
+      <input type="radio" name="23" value="yes">
+      O taip... Að ir dabar gerai prisimenu, kad já 
+      <select name="admintime">
+        <option selected>kà tik</OPTION>
+        <option>neseniai</OPTION>
+        <option>labai 
+    seniai</OPTION></SELECT>
+      administravau. <br>
+      <input type="radio" name="23" value="23"> Nebuvo tokio karto. 
+    <li>Tu kà tik sudalinai diskà á dvi dalis. Viena yra FAT32, o kita - NTFS 
+      tipo. Á kurià disko dalá galimà áraðyti <i>WindowsME</I>, o á kurià <i>WindowsNT 4</I>?<br>
+      <select name="os1">
+        <option value="yes" selected>WindowsME</OPTION>
+        <option>WindowsNT 4</OPTION></SELECT>
+      á FAT32 dalmená, o 
+      <select name="os2">
+        <option value="yess55645" selected>WindowsME</OPTION>
+        <option value="yes">WindowsNT 4</OPTION></SELECT> á NTFS dalmená. 
+    <li> 
+      <div align="left">Kà daryti, kai atsitinka taip?<br>
+        <table width="70%" border="0" cellspacing="0" cellpadding="0">
+          <tr> 
+            <td> 
+              <div align="center"><IMG height=100 src="../Images/keyboardwasnotpluged.gif" width=250></DIV></TD></TR></TABLE>
+        <input type="radio" name="25" value="25">
+        Skambinti administratoriui.<br>
+        <input type="radio" name="25" value="25">
+        Skambinti firmai, kuri pardavë tau kompà.<br>
+        <input type="radio" name="25" value="25">
+        Paspausti F1 (pakartoti veiksmà) arba F2 (nutraukti).<br>
+        <input type="radio" name="25" value="yes">
+        Paþiûrëti ar visi kabeliai yra gerai sujungti.<br>
+        <input type="radio" name="25" value="25">
+        Ásitikiti ar kompiuteryje ið tikrøjø yra Windows 95.<br>
+        <input type="radio" name="25" value="25">
+        Pasiskøsti mamai, kad blogas hackeris nuhakino kompà. <br>
+        <input type="radio" name="25" value="yes">
+        Ásitikinti ar pelës nugriauþë kabeliø.<br>
+        <input type="radio" name="25" value="25">
+        Eiti miegoti ir tikëtis, kad ryte bus viskas gerai.<br>
+        <input type="radio" name="25" value="25">
+        Susisiekti su þmogum per MiRC, kuris þino kaip tau padëti ir iðspæsti 
+        problemà. Kai suþinosi viskà, kà reikia daryti paèiam pasitaisyti kompà.<br>
+        <input type="radio" name="25" value="yes"> 
+  Pirkti naujà klaviatûrà.</DIV></LI></OL>
+  <div align="center">&nbsp;<INPUT id=Submit style="LEFT: 217px; WIDTH: 74px; TOP: 3208px; HEIGHT: 23px" type=submit value="Toliau >" border=0 name=Submit></DIV></FORM>
+</body>
+</html>

@@ -1,0 +1,133 @@
+<html><head>
+<title>#Bitas - IRC Kanalas</title>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1257">
+<SCRIPT LANGUAGE="JavaScript">
+<!--  Begin
+var crlf = "\r\n";
+var x = 1;
+var y = 1;
+var dx = 1;
+var dy = 1;
+var s = "";
+var u = 0;
+var oops_flag = false;
+var score = 0;
+function move1() {
+x += dx;
+if (x > 31) {
+x -= 2 * Math.abs(dx);
+if (dx > 0) dx = -dx;
+}
+if (x <  0) {
+x += 2 * Math.abs(dx);
+if (dx < 0) dx = -dx;
+}
+y += dy;
+if (y > 14) {
+y -= 2 * Math.abs(dy);
+if (dy > 0) dy = -dy;
+if (Math.abs(x - 2*u - 1) > 2) {
+oops_flag = true;
+}
+else {
+score += 1;
+   }
+}
+if (y <  0) { y += 2 * Math.abs(dy);
+if (dy < 0) dy = -dy; }
+}
+function display1() {
+var s1 = ""
+var i,j;
+if (oops_flag) return "O!!! Na ir kaip čia galėjo būti? Pabandyk dar kartą, gal pasiseks geriau.";
+for (j=0;j<15;j++) {
+for (i=0;i<32;i++) {
+if (j == y && i == x) s1 += "O";
+else s1 += " ";
+}
+s1 += crlf;
+}
+var s2 = "";
+for (i=0;i<16;i++) {
+if (u == i) s2 += "«=»";
+ else s2 += "..";
+}
+return (s1+s2);
+}
+var timerID = null;
+var timerRunning = false;
+var myform;
+function stopclock (){
+if(timerRunning) clearTimeout(timerID);
+timerRunning = false;
+}
+function startclock (form) {
+myform = form;
+oops_flag = false;
+if (navigator.userAgent.indexOf("Mac") > 2) crlf = "\n";
+stopclock();
+dotime();
+}
+function dotime() {
+move1();
+if (myform != null) {
+myform.text3.value = display1();
+myform.score.value = " " + score;
+}
+if (!oops_flag) timerID = setTimeout("dotime()",200);
+timerRunning = true;
+}
+// End -->
+</SCRIPT>
+<link rel="stylesheet" href="../CSS/body-fixed.css">
+<style type="text/css">
+<!--
+@import "../CSS/body-fixed.css";
+a:link {  text-decoration: none}
+a:hover {  text-decoration: none; filter: Alpha(Opacity=50, FinishOpacity=100, Style=1, StartX=1, StartY=1, FinishX=1, FinishY=1); font-style: normal; color: #990033}
+a:active {  text-decoration: none}
+a:visited {  text-decoration: none}
+-->
+</style>
+</head><body bgcolor="#FFFFFF" background="../Images/backgroundwer.jpg" leftmargin="3" topmargin="3" link="#FF9999" vlink="#FF9999" alink="#FF9999">
+<center>
+  <table width="100%" border="0" cellspacing="0" cellpadding="0">
+    <tr>
+      <td width="50%" align="left" valign="middle"> 
+        <form name=form>
+          <div align="center"> 
+            <table width="100" border="0" cellspacing="0" cellpadding="0">
+              <tr>
+                <td> 
+                  <div align="center">
+                    <textarea name="text3" rows="16" cols="34" wrap="34" readonly style="background: #6666CC; color: #FFCC00; scrollbar-3d-light-color: #FFFF33; scrollbar-arrow-color: #FFFF33; scrollbar-base-color: #FFFF33; scrollbar-shadow-color: #FFFF33; scrollbar-face-color: #6666CC; scrollbar-dark-shadow-color: #FFFF33; scrollbar-highlight-color: #6666CC; border: 0; clear: none; ime-mode: disabled; outline: #6666CC; text-shadow: #33CC66 1em 1em 1em; word-break: normal" accesskey="a">[Žaidimo laukelis]</textarea>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <div align="left"><a href="" onMouseOver="u =0">##</a><a href="" onMouseOver="u =1">##</a><a href="" onMouseOver="u =2">##</a><a href="" onMouseOver="u =3">##</a><a href="" onMouseOver="u =4">##</a><a href="" onMouseOver="u =5">##</a><a href="" onMouseOver="u =6">##</a><a href="" onMouseOver="u =7">##</a><a href="" onMouseOver="u =8">##</a><a href="" onMouseOver="u =9">##</a><a href="" onMouseOver="u = 10">##</a><a href="" onMouseOver="u = 11">##</a><a href="" onMouseOver="u = 12">##</a><a href="" onMouseOver="u = 13">##</a><a href="" onMouseOver="u = 14">##</a><a href="" onMouseOver="u = 15">##</a><a href="" onMouseOver="u = 15">##</a> 
+                  </div>
+                </td>
+              </tr>
+            </table>
+            <p align="center"> 
+              <input type=button name=button1 value="Žaisk" onClick="startclock(this.form)">
+              Taškai: 
+              <input type="text" name="score" size="10" value="0" readonly style="border: 0">
+            </p>
+            </div>
+          </form>
+      </td>
+      <td width="50%" align="left" valign="top"> 
+        <p><b>Kaip žaisti ?</b></p>
+        <p>Paspausk "Žaisk" tam, kad pradėtum žaisti. Judink pelės kursorių per 
+          groteles tam, kad valdytum pagaliuką. </p>
+        <p><b>Kiek šį žaidimą galima žaisti?</b></p>
+        <p>Kiek nori, nes jis yra be galo... na beveik... kol tau jis neasibos.</p>
+    </td>
+    </tr>
+  </table>
+  </center>
+
+</body></html>

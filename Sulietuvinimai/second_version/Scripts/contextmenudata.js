@@ -1,0 +1,11 @@
+document.write('<!--[if IE]>');
+document.write('<div id="ie5menu" onMouseover="highlightie5()" onMouseout="lowlightie5()" onClick="jumptoie5()" dir="ltr" title="6g" style="caption-side: top; azimuth: far-right; clear: both; display: run-in; elevation: level; empty-cells: hide; filter: inherit; float: right; font: normal x-small; layout-grid: fixed; layout-flow: horizontal; ime-mode: auto; overflow: visible; play-during: none; rectangular: true; richness: 1; ruby-overhang: auto; text-shadow: black; text-transform: none; widows: 9; writing-mode: lr-tb; zoom: inherit; word-spacing: inherit; unicode-bidi: embed; stress: 6; background: fixed white; border: inherit; direction: ltr; orphans: 14; text-decoration: none; text-justify: newspaper">');
+document.write('<div class="menuitems" url="javascript:window.history.back()">Atgal</div>');
+document.write('<div class="menuitems" url="javascript:window.history.forward()">Toliau</div>');
+document.write('<hr>');
+document.write('<div class="menuitems" url="javascript:window.location.reload(true)">Atnaujinti</div>');
+document.write('<div class="menuitems" url="javascript:window.print()">Spausdinti</div>');
+document.write('<hr>');
+document.write('<div class="menuitems" url="javascript:window.external.AddFavorite(window.document.location,window.document.title)">Pridëti á Favorites</div>');
+document.write('</div>');
+document.write('<![endif]-->');

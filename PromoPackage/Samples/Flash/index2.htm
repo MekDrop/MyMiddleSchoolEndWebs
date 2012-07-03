@@ -1,0 +1,98 @@
+<html>
+<!-- creation date: 2002.03.25 -->
+<head>
+<title></title>
+<meta name="Description" content="">
+<meta name="Keywords" content="">
+<meta name="Author" content="21 Interactive">
+<meta name="Generator" content="AceHTML 4 Pro">
+<script language="JavaScript">
+<!--
+function MM_timelinePlay(tmLnName, myID) { //v1.2
+  //Copyright 1997 Macromedia, Inc. All rights reserved.
+  var i,j,tmLn,props,keyFrm,sprite,numKeyFr,firstKeyFr,propNum,theObj,firstTime=false;
+  if (document.MM_Time == null) MM_initTimelines(); //if *very* 1st time
+  tmLn = document.MM_Time[tmLnName];
+  if (myID == null) { myID = ++tmLn.ID; firstTime=true;}//if new call, incr ID
+  if (myID == tmLn.ID) { //if Im newest
+    setTimeout('MM_timelinePlay("'+tmLnName+'",'+myID+')',tmLn.delay);
+    fNew = ++tmLn.curFrame;
+    for (i=0; i<tmLn.length; i++) {
+      sprite = tmLn[i];
+      if (sprite.charAt(0) == 's') {
+        if (sprite.obj) {
+          numKeyFr = sprite.keyFrames.length; firstKeyFr = sprite.keyFrames[0];
+          if (fNew >= firstKeyFr && fNew <= sprite.keyFrames[numKeyFr-1]) {//in range
+            keyFrm=1;
+            for (j=0; j<sprite.values.length; j++) {
+              props = sprite.values[j]; 
+              if (numKeyFr != props.length) {
+                if (props.prop2 == null) sprite.obj[props.prop] = props[fNew-firstKeyFr];
+                else        sprite.obj[props.prop2][props.prop] = props[fNew-firstKeyFr];
+              } else {
+                while (keyFrm<numKeyFr && fNew>=sprite.keyFrames[keyFrm]) keyFrm++;
+                if (firstTime || fNew==sprite.keyFrames[keyFrm-1]) {
+                  if (props.prop2 == null) sprite.obj[props.prop] = props[keyFrm-1];
+                  else        sprite.obj[props.prop2][props.prop] = props[keyFrm-1];
+        } } } } }
+      } else if (sprite.charAt(0)=='b' && fNew == sprite.frame) eval(sprite.value);
+      if (fNew > tmLn.lastFrame) tmLn.ID = 0;
+  } }
+}
+
+function MM_initTimelines() {
+    //MM_initTimelines() Copyright 1997 Macromedia, Inc. All rights reserved.
+    var ns = navigator.appName == "Netscape";
+    document.MM_Time = new Array(1);
+    document.MM_Time[0] = new Array(1);
+    document.MM_Time["Timeline1"] = document.MM_Time[0];
+    document.MM_Time[0].MM_Name = "Timeline1";
+    document.MM_Time[0].fps = 10;
+    document.MM_Time[0][0] = new String("sprite");
+    document.MM_Time[0][0].slot = 1;
+    if (ns)
+        document.MM_Time[0][0].obj = document["TextLayer"];
+    else
+        document.MM_Time[0][0].obj = document.all ? document.all["TextLayer"] : null;
+    document.MM_Time[0][0].keyFrames = new Array(1, 15);
+    document.MM_Time[0][0].values = new Array(2);
+    document.MM_Time[0][0].values[0] = new Array(3,3,3,3,3,3,3,3,3,3,3,3,3,3,3);
+    document.MM_Time[0][0].values[0].prop = "left";
+    document.MM_Time[0][0].values[1] = new Array(-500,-464,-429,-393,-357,-321,-286,-250,-214,-179,-143,-107,-71,-36,0);
+    document.MM_Time[0][0].values[1].prop = "top";
+    if (!ns) {
+        document.MM_Time[0][0].values[0].prop2 = "style";
+        document.MM_Time[0][0].values[1].prop2 = "style";
+    }
+    document.MM_Time[0].lastFrame = 15;
+    for (i=0; i<document.MM_Time.length; i++) {
+        document.MM_Time[i].ID = null;
+        document.MM_Time[i].curFrame = 0;
+        document.MM_Time[i].delay = 1000/document.MM_Time[i].fps;
+    }
+}
+//-->
+</script>
+<link rel="stylesheet" href="scrollbars.css">
+</head>
+<body bgcolor="#6666ff" onLoad="MM_timelinePlay('Timeline1')">
+<div id="TextLayer" style="position:absolute; left:3px; top:-500px; width:575px; height:220px; z-index:1"> 
+  <h1><font color="#FFCCCC" face="Arial, Helvetica, sans-serif">Pagrindinis Puslapis</font></h1>
+  <p><kbd><font color="#FFFF99">&nbsp;&nbsp;A<b>èiû, kad uþklydote á ðià svetainæ! 
+    ;) <br>
+    <br>
+    &nbsp;&nbsp;Ði interneto svetainë yra skirta visiems #Bitas IRC kanalo lankytojams 
+    ir tiems, kurie norëtø daugiau suþinoti apie ðá kanalà.<br>
+    <br>
+    &nbsp;&nbsp;Anksèiau ðioje interneto svetainëje buvo daugiau informacijos, 
+    taèiau dabar mes jà iðmetëme nenorëdami varginti mûsø lankytojø: pagal apklausas 
+    lankytojai ne ið MIRC á tokius puslapius retai eina, o tik 30% visø MIRC'ininkø 
+    skaito svetainës turiná.<br>
+    <br>
+    <font color="#99FF99">&nbsp;&nbsp;Beje, ðis tinklalapis yra nepritaikytas 
+    þiûrëti ið monitoriø dirbanèiø didesne kaip 1024x800 geba.</font></b></font></kbd></p>
+  </div>
+<h1><kbd><font color="#FFFF99"><b><br>
+  </b> </font></kbd></h1>
+</body>
+</html>

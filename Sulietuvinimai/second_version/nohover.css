@@ -1,0 +1,8 @@
+a:active {  text-decoration: blink}
+a:hover {  text-decoration: none; border-color: black black #CCCCCC; filter: BlendTrans(Duration=5); border-style: none; color: #0033CC}
+a:link {  text-decoration: none}
+a:visited {  text-decoration: none}
+.un66789 {  font-family: "Times New Roman", Times, serif; color: #FFFF00; font-size: medium; text-decoration: none; text-transform: capitalize; line-height: normal; font-style: normal; border-style: none}
+
+
+input {  font-family: "Times New Roman", Times, serif; font-size: 12px; width: 174px; clip:    rect(   )}

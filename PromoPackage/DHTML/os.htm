@@ -1,0 +1,195 @@
+<html>
+<head>
+<title>MekDrop - DHTML</title>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1257">
+<script language="JavaScript">
+<!--
+<!--
+function MM_reloadPage(init) {  //reloads the window if Nav4 resized
+  if (init==true) with (navigator) {if ((appName=="Netscape")&&(parseInt(appVersion)==4)) {
+    document.MM_pgW=innerWidth; document.MM_pgH=innerHeight; onresize=MM_reloadPage; }}
+  else if (innerWidth!=document.MM_pgW || innerHeight!=document.MM_pgH) location.reload();
+}
+MM_reloadPage(true);
+// -->
+
+function MM_findObj(n, d) { //v4.0
+  var p,i,x;  if(!d) d=document; if((p=n.indexOf("?"))>0&&parent.frames.length) {
+    d=parent.frames[n.substring(p+1)].document; n=n.substring(0,p);}
+  if(!(x=d[n])&&d.all) x=d.all[n]; for (i=0;!x&&i<d.forms.length;i++) x=d.forms[i][n];
+  for(i=0;!x&&d.layers&&i<d.layers.length;i++) x=MM_findObj(n,d.layers[i].document);
+  if(!x && document.getElementById) x=document.getElementById(n); return x;
+}
+
+function MM_showHideLayers() { //v3.0
+  var i,p,v,obj,args=MM_showHideLayers.arguments;
+  for (i=0; i<(args.length-2); i+=3) if ((obj=MM_findObj(args[i]))!=null) { v=args[i+2];
+    if (obj.style) { obj=obj.style; v=(v=='show')?'visible':(v='hide')?'hidden':v; }
+    obj.visibility=v; }
+}
+
+function MM_changeProp(objName,x,theProp,theValue) { //v3.0
+  var obj = MM_findObj(objName);
+  if (obj && (theProp.indexOf("style.")==-1 || obj.style)) eval("obj."+theProp+"='"+theValue+"'");
+}
+
+function MM_preloadImages() { //v3.0
+  var d=document; if(d.images){ if(!d.MM_p) d.MM_p=new Array();
+    var i,j=d.MM_p.length,a=MM_preloadImages.arguments; for(i=0; i<a.length; i++)
+    if (a[i].indexOf("#")!=0){ d.MM_p[j]=new Image; d.MM_p[j++].src=a[i];}}
+}
+
+function MM_dragLayer(objName,x,hL,hT,hW,hH,toFront,dropBack,cU,cD,cL,cR,targL,targT,tol,dropJS,et,dragJS) { //v3.0
+  //Copyright 1998 Macromedia, Inc. All rights reserved.
+  var i,j,aLayer,retVal,curDrag=null,NS=(navigator.appName=='Netscape'), curLeft, curTop;
+  if (!document.all && !document.layers) return false;
+  retVal = true; if(!NS && event) event.returnValue = true;
+  if (MM_dragLayer.arguments.length > 1) {
+    curDrag = MM_findObj(objName); if (!curDrag) return false;
+    if (!document.allLayers) { document.allLayers = new Array();
+      with (document) if (NS) { for (i=0; i<layers.length; i++) allLayers[i]=layers[i];
+        for (i=0; i<allLayers.length; i++) if (allLayers[i].document && allLayers[i].document.layers)
+          with (allLayers[i].document) for (j=0; j<layers.length; j++) allLayers[allLayers.length]=layers[j];
+      } else for (i=0;i<all.length;i++) if (all[i].style&&all[i].style.position) allLayers[allLayers.length]=all[i];}
+    curDrag.MM_dragOk=true; curDrag.MM_targL=targL; curDrag.MM_targT=targT;
+    curDrag.MM_tol=Math.pow(tol,2); curDrag.MM_hLeft=hL; curDrag.MM_hTop=hT;
+    curDrag.MM_hWidth=hW; curDrag.MM_hHeight=hH; curDrag.MM_toFront=toFront;
+    curDrag.MM_dropBack=dropBack; curDrag.MM_dropJS=dropJS;
+    curDrag.MM_everyTime=et; curDrag.MM_dragJS=dragJS;
+    curDrag.MM_oldZ = (NS)?curDrag.zIndex:curDrag.style.zIndex;
+    curLeft= (NS)?curDrag.left:curDrag.style.pixelLeft; curDrag.MM_startL = curLeft;
+    curTop = (NS)?curDrag.top:curDrag.style.pixelTop; curDrag.MM_startT = curTop;
+    curDrag.MM_bL=(cL<0)?null:curLeft-cL; curDrag.MM_bT=(cU<0)?null:curTop -cU;
+    curDrag.MM_bR=(cR<0)?null:curLeft+cR; curDrag.MM_bB=(cD<0)?null:curTop +cD;
+    curDrag.MM_LEFTRIGHT=0; curDrag.MM_UPDOWN=0; curDrag.MM_SNAPPED=false; //use in your JS!
+    document.onmousedown = MM_dragLayer; document.onmouseup = MM_dragLayer;
+    if (NS) document.captureEvents(Event.MOUSEDOWN|Event.MOUSEUP);
+  } else {
+    var theEvent = ((NS)?objName.type:event.type);
+    if (theEvent == 'mousedown') {
+      var mouseX = (NS)?objName.pageX : event.clientX + document.body.scrollLeft;
+      var mouseY = (NS)?objName.pageY : event.clientY + document.body.scrollTop;
+      var maxDragZ=null; document.MM_maxZ = 0;
+      for (i=0; i<document.allLayers.length; i++) { aLayer = document.allLayers[i];
+        var aLayerZ = (NS)?aLayer.zIndex:aLayer.style.zIndex;
+        if (aLayerZ > document.MM_maxZ) document.MM_maxZ = aLayerZ;
+        var isVisible = (((NS)?aLayer.visibility:aLayer.style.visibility).indexOf('hid') == -1);
+        if (aLayer.MM_dragOk != null && isVisible) with (aLayer) {
+          var parentL=0; var parentT=0;
+          if (!NS) { parentLayer = aLayer.parentElement;
+            while (parentLayer != null && parentLayer.style.position) {
+              parentL += parentLayer.offsetLeft; parentT += parentLayer.offsetTop;
+              parentLayer = parentLayer.parentElement; } }
+          var tmpX=mouseX-(((NS)?pageX:style.pixelLeft+parentL)+MM_hLeft);
+          var tmpY=mouseY-(((NS)?pageY:style.pixelTop +parentT)+MM_hTop);
+          var tmpW = MM_hWidth;  if (tmpW <= 0) tmpW += ((NS)?clip.width :offsetWidth);
+          var tmpH = MM_hHeight; if (tmpH <= 0) tmpH += ((NS)?clip.height:offsetHeight);
+          if ((0 <= tmpX && tmpX < tmpW && 0 <= tmpY && tmpY < tmpH) && (maxDragZ == null
+              || maxDragZ <= aLayerZ)) { curDrag = aLayer; maxDragZ = aLayerZ; } } }
+      if (curDrag) {
+        document.onmousemove = MM_dragLayer; if (NS) document.captureEvents(Event.MOUSEMOVE);
+        curLeft = (NS)?curDrag.left:curDrag.style.pixelLeft;
+        curTop = (NS)?curDrag.top:curDrag.style.pixelTop;
+        MM_oldX = mouseX - curLeft; MM_oldY = mouseY - curTop;
+        document.MM_curDrag = curDrag;  curDrag.MM_SNAPPED=false;
+        if(curDrag.MM_toFront) {
+          eval('curDrag.'+((NS)?'':'style.')+'zIndex=document.MM_maxZ+1');
+          if (!curDrag.MM_dropBack) document.MM_maxZ++; }
+        retVal = false; if(!NS) event.returnValue = false;
+    } } else if (theEvent == 'mousemove') {
+      if (document.MM_curDrag) with (document.MM_curDrag) {
+        var mouseX = (NS)?objName.pageX : event.clientX + document.body.scrollLeft;
+        var mouseY = (NS)?objName.pageY : event.clientY + document.body.scrollTop;
+        newLeft = mouseX-MM_oldX; newTop  = mouseY-MM_oldY;
+        if (MM_bL!=null) newLeft = Math.max(newLeft,MM_bL);
+        if (MM_bR!=null) newLeft = Math.min(newLeft,MM_bR);
+        if (MM_bT!=null) newTop  = Math.max(newTop ,MM_bT);
+        if (MM_bB!=null) newTop  = Math.min(newTop ,MM_bB);
+        MM_LEFTRIGHT = newLeft-MM_startL; MM_UPDOWN = newTop-MM_startT;
+        if (NS) {left = newLeft; top = newTop;}
+        else {style.pixelLeft = newLeft; style.pixelTop = newTop;}
+        if (MM_dragJS) eval(MM_dragJS);
+        retVal = false; if(!NS) event.returnValue = false;
+    } } else if (theEvent == 'mouseup') {
+      document.onmousemove = null;
+      if (NS) document.releaseEvents(Event.MOUSEMOVE);
+      if (NS) document.captureEvents(Event.MOUSEDOWN); //for mac NS
+      if (document.MM_curDrag) with (document.MM_curDrag) {
+        if (typeof MM_targL =='number' && typeof MM_targT == 'number' &&
+            (Math.pow(MM_targL-((NS)?left:style.pixelLeft),2)+
+             Math.pow(MM_targT-((NS)?top:style.pixelTop),2))<=MM_tol) {
+          if (NS) {left = MM_targL; top = MM_targT;}
+          else {style.pixelLeft = MM_targL; style.pixelTop = MM_targT;}
+          MM_SNAPPED = true; MM_LEFTRIGHT = MM_startL-MM_targL; MM_UPDOWN = MM_startT-MM_targT; }
+        if (MM_everyTime || MM_SNAPPED) eval(MM_dropJS);
+        if(MM_dropBack) {if (NS) zIndex = MM_oldZ; else style.zIndex = MM_oldZ;}
+        retVal = false; if(!NS) event.returnValue = false; }
+      document.MM_curDrag = null;
+    }
+    if (NS) document.routeEvent(objName);
+  } return retVal;
+}
+//-->
+</script>
+<style type="text/css">
+<!--
+body {  background-image: url(Background.png); background-repeat: no-repeat; background-attachment: fixed; background-position: center center; background-color: #3333CC}
+a:active {  text-decoration: none}
+a:hover {  text-decoration: none; color: #FFFF00}
+a:link {  text-decoration: none}
+a:visited {  text-decoration: none}
+a {  cursor: hand}
+.chamikatze {  text-decoration: none; cursor: hand; filter: DropShadow(Color=red, OffX=1, OffY=1, Positive=1)}
+-->
+</style>
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" leftmargin="0" topmargin="0" background="Background.png" link="#993366" vlink="#993366" alink="#993366" onDblClick="MM_showHideLayers('layProgBar','','show')" onLoad="MM_preloadImages('Logo.jpg','AboutMe.png','Background.png','Paslaugos.png','pvz.png','Susisiekimas.png','Welcome.png')">
+<div id="layProgBar" style="position:absolute; left:10px; top:19px; width:162px; height:140px; z-index:1; background-color: #FFCC00; layer-background-color: #FFCC00; border: 1px none #000000"> 
+  <table width="100%" border="0" cellspacing="0" cellpadding="0" height="100%">
+    <tr height="10%"> 
+      <td bgcolor="#9966FF" align="center" valign="middle"><font color="#FFFF00"><b><font color="#FFFFFF" onMouseDown="MM_dragLayer('layProgBar','',0,0,0,0,true,false,-1,-1,-1,-1,10,19,50,'',false,'')">Meniu</font></b></font></td>
+      <td bgcolor="#9966FF" width="11%" align="center" valign="middle"><b><font color="#FFFFFF" onMouseOver="MM_showHideLayers('layProgBar','','hide')">x</font></b></td>
+    </tr>
+    <tr align="left" valign="top" height="100%"> 
+      <td colspan="2" height="100%"> 
+          
+        <table width="100%" border="0" cellspacing="2" cellpadding="2">
+          <tr> 
+            <td width="11%"><font color="#FF6600"><b>:)</b></font></td>
+            <td onMouseOver="MM_changeProp('layCNT','','innerHTML','&lt;img src=\&quot;AboutMe.png\&quot; name=\&quot;imgText\&quot; width=\&quot;460\&quot; height=\&quot;415\&quot;&gt;','DIV');MM_changeProp('layName','','innerText','Apie Mane','DIV')" width="89%" class="chamikatze"><a href="#" onMouseOver="MM_changeProp('layCNT','','innerHTML','&lt;img src=\&quot;AboutMe.png\&quot; name=\&quot;imgText\&quot; width=\&quot;460\&quot; height=\&quot;415\&quot;&gt;','DIV');MM_changeProp('layName','','innerText','Apie Mane','DIV')" width="89%" class="chamikatze">Apie 
+              Mane</a></td>
+          </tr>
+          <tr> 
+            <td width="11%"><font color="#FF6600"><b>:)</b></font></td>
+            <td onMouseOver="MM_changeProp('layCNT','','innerHTML','&lt;img src=\&quot;Paslaugos.png\&quot; name=\&quot;imgText\&quot; width=\&quot;460\&quot; height=\&quot;415\&quot;&gt;','DIV');MM_changeProp('layName','','innerText','Paslaugos','DIV')" width="89%" class="chamikatze"><a href="#" onMouseOver="MM_changeProp('layCNT','','innerHTML','&lt;img src=\&quot;Paslaugos.png\&quot; name=\&quot;imgText\&quot; width=\&quot;460\&quot; height=\&quot;415\&quot;&gt;','DIV');MM_changeProp('layName','','innerText','Paslaugos','DIV')">Paslaugos</a></td>
+          </tr>
+          <tr> 
+            <td width="11%"><font color="#FF6600"><b>:)</b></font></td>
+            <td onMouseOver="MM_changeProp('layCNT','','innerHTML','&lt;img src=\&quot;pvz.png\&quot; name=\&quot;imgText\&quot; width=\&quot;228\&quot; height=\&quot;204\&quot; usemap=\&quot;#imgTextMap\&quot; border=\&quot;0\&quot;&gt;&lt;map name=\&quot;imgTextMap\&quot;&gt;&lt;area shape=\&quot;rect\&quot; coords=\&quot;14,67,154,83\&quot; href=\&quot;http://www.sulietuvinimai.visiems.lt\&quot;&gt;&lt;area shape=\&quot;rect\&quot; coords=\&quot;4,83,91,97\&quot; href=\&quot;http://www.polarhome.com/~wertejas\&quot;&gt;&lt;area shape=\&quot;rect\&quot; coords=\&quot;15,105,193,122\&quot; href=\&quot;http://www.polarhome.com/~sdmgrotuvas3\&quot;&gt;&lt;area shape=\&quot;rect\&quot; coords=\&quot;-10,132,130,147\&quot; href=\&quot;http://www.polarhome.com/~nushaukjas\&quot;&gt;&lt;area shape=\&quot;rect\&quot; coords=\&quot;18,159,225,172\&quot; href=\&quot;../Samples/BitasVer.htm\&quot;&gt;&lt;area shape=\&quot;rect\&quot; coords=\&quot;0,181,152,193\&quot; href=\&quot;../Samples/ManoScriptai/index.html\&quot;&gt;&lt;/map&gt;','DIV');MM_changeProp('layProgBar','','innerText','Pavyzdžiai','DIV')" width="89%" class="chamikatze"><a href="#" onMouseOver="MM_changeProp('layCNT','','innerHTML','&lt;img src=\&quot;pvz.png\&quot; name=\&quot;imgText\&quot; width=\&quot;228\&quot; height=\&quot;204\&quot; usemap=\&quot;#imgTextMap\&quot; border=\&quot;0\&quot;&gt;&lt;map name=\&quot;imgTextMap\&quot;&gt;&lt;area shape=\&quot;rect\&quot; coords=\&quot;14,67,154,83\&quot; href=\&quot;http://www.sulietuvinimai.visiems.lt\&quot;&gt;&lt;area shape=\&quot;rect\&quot; coords=\&quot;4,83,91,97\&quot; href=\&quot;http://www.polarhome.com/~wertejas\&quot;&gt;&lt;area shape=\&quot;rect\&quot; coords=\&quot;15,105,193,122\&quot; href=\&quot;http://www.polarhome.com/~sdmgrotuvas3\&quot;&gt;&lt;area shape=\&quot;rect\&quot; coords=\&quot;-10,132,130,147\&quot; href=\&quot;http://www.polarhome.com/~nushaukjas\&quot;&gt;&lt;area shape=\&quot;rect\&quot; coords=\&quot;18,159,225,172\&quot; href=\&quot;../Samples/BitasVer.htm\&quot;&gt;&lt;area shape=\&quot;rect\&quot; coords=\&quot;0,181,152,193\&quot; href=\&quot;../Samples/ManoScriptai/index.html\&quot;&gt;&lt;/map&gt;','DIV');MM_changeProp('layProgBar','','innerText','Pavyzdžiai','DIV')">Pavyzdžiai</a></td>
+          </tr>
+          <tr> 
+            <td width="11%"><font color="#FF6600"><b>:)</b></font></td>
+            <td onMouseOver="MM_changeProp('layProgBar','','innerText','Kaip Susisiekti?','DIV');MM_changeProp('layCNT','','innerHTML','&lt;img src=\&quot;Susisiekimas.png\&quot; name=\&quot;imgText\&quot; width=\&quot;460\&quot; height=\&quot;415\&quot;&gt;','DIV')" width="89%" class="chamikatze"><a href="#" onMouseOver="MM_changeProp('layProgBar','','innerText','Kaip Susisiekti?','DIV');MM_changeProp('layCNT','','innerHTML','&lt;img src=\&quot;Susisiekimas.png\&quot; name=\&quot;imgText\&quot; width=\&quot;460\&quot; height=\&quot;415\&quot;&gt;','DIV')">Kaip 
+              Susisiekti?</a></td>
+          </tr>
+        </table>
+      </td>
+    </tr>
+  </table>
+</div>
+<div id="layContents" style="position:absolute; left:232px; top:22px; width:442px; height:427px; z-index:1; background-color: #FFCC99; layer-background-color: #FFCC99; border: 1px none #000000; visibility: visible"> 
+  <table width="100%" border="0" cellspacing="0" cellpadding="0">
+    <tr height="10%"> 
+      <td bgcolor="#9966FF" align="center" valign="middle" height="10" width="100%">
+        <div id="layName"><b><font color="#FFFFFF" onMouseDown="MM_dragLayer('layProgBar','',0,0,0,0,true,false,-1,-1,-1,-1,10,19,50,'',false,'')">Textas</font></b></div>
+      </td>
+      <td bgcolor="#9966FF" width="10" align="center" valign="middle" onClick="MM_showHideLayers('layProgBar','','hide')" height="10%"><b><font color="#FFFFFF" onClick="MM_showHideLayers('layAbout','','hide')">x</font></b></td>
+    </tr>
+    <tr align="left" valign="top" height="100%"> 
+      <td colspan="2"><img src="Welcome.png" width="460" height="415"></td>
+    </tr>
+  </table>
+</div>
+</body>
+</html>

@@ -1,0 +1,89 @@
+ 
+<html>
+<!-- #BeginTemplate "/Templates/mainFrame.dwt" --> 
+<head>
+<!-- #BeginEditable "doc" --> 
+<title></title>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1257">
+<style type="text/css">
+<!--
+@import url(../CSS/body-fixed.css);
+-->
+</style>
+<link rel="stylesheet" href="../CSS/body-fixed.css">
+<!-- #EndEditable --> 
+<script language="JavaScript">
+<!--
+function MM_findObj(n, d) { //v4.0
+  var p,i,x;  if(!d) d=document; if((p=n.indexOf("?"))>0&&parent.frames.length) {
+    d=parent.frames[n.substring(p+1)].document; n=n.substring(0,p);}
+  if(!(x=d[n])&&d.all) x=d.all[n]; for (i=0;!x&&i<d.forms.length;i++) x=d.forms[i][n];
+  for(i=0;!x&&d.layers&&i<d.layers.length;i++) x=MM_findObj(n,d.layers[i].document);
+  if(!x && document.getElementById) x=document.getElementById(n); return x;
+}
+
+function MM_changeProp(objName,x,theProp,theValue) { //v3.0
+  var obj = MM_findObj(objName);
+  if (obj && (theProp.indexOf("style.")==-1 || obj.style)) eval("obj."+theProp+"='"+theValue+"'");
+}
+//-->
+</script>
+</head>
+<body bgcolor="#FFFFFF" background="../Images/backgroundwer.jpg" leftmargin="3" topmargin="3">
+<!-- #BeginEditable "e" --> 
+<table width="100%" border="0" cellspacing="0" cellpadding="0" bordercolor="#FFFFFF">
+  <tr> 
+    <td> 
+      <h1><font color="#9999FF">Taisyklės</font></h1>
+      <p>Prieš tapdamas #Bitas klubo nariu tu privalai sutinkti su jo taisyklėmis. 
+        O jos yra tokios: </p>
+      <ul>
+        <li>Kiekvienas #Bitas klubo narys.... </li>
+        <ul>
+          <li>... negali naudoti klubo paslaugų ar jo serveriais įstatymų pažeidinėjimui 
+            (pvz. laužtis į serverius).</li>
+        </ul>
+        <ul>
+          <li>... turi būti normalai užpildęs anketą.</li>
+          <li>... turi bent kartą per mėnesį apsilankyti #Bitas kanale.</li>
+          <li>... turi nedalinti savo #Bitas klubo slaptažodžio.</li>
+        </ul>
+        <table width="303" border="0" cellspacing="0" cellpadding="0" align="center" height="100">
+          <tr> 
+            <td colspan="3" height="132"> 
+              <div align="center"><br>
+                <form name="form3" method="post" action="memberrulesaccept-no.htm">
+                  <h3><font color="#FF6699">Ar sutinki laikytis taisyklių?</font></h3>
+                  <table width="110" border="0" cellspacing="0">
+                    <tr> 
+                      <td> 
+                        <input type="radio" name="yesno" value="yes" onClick="MM_changeProp('form3','','action','memberregister.htm','FORM')">
+                      </td>
+                      <td>Taip</td>
+                    </tr>
+                    <tr> 
+                      <td> 
+                        <input type="radio" name="yesno" value="yes" onClick="MM_changeProp('form3','','action','memberrulesaccept-no.htm','FORM')" checked>
+                      </td>
+                      <td>Ne</td>
+                    </tr>
+                  </table>
+                  <br>
+                  <input type="submit" name="Submit3" value="Toliau &gt;">
+                </form>
+              </div>
+            </td>
+          </tr>
+        </table>
+      </ul>
+        <blockquote> 
+          <p>&nbsp;</p>
+        </blockquote>
+      
+    </td>
+  </tr>
+</table>
+<!-- #EndEditable --> 
+</body>
+<!-- #EndTemplate -->
+</html>

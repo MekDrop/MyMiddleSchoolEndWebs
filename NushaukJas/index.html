@@ -1,0 +1,155 @@
+<html>
+<head>
+<title>Nušauk Jas!</title>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1257">
+<script language="JavaScript">
+<!--
+function MM_findObj(n, d) { //v3.0
+  var p,i,x;  if(!d) d=document; if((p=n.indexOf("?"))>0&&parent.frames.length) {
+    d=parent.frames[n.substring(p+1)].document; n=n.substring(0,p);}
+  if(!(x=d[n])&&d.all) x=d.all[n]; for (i=0;!x&&i<d.forms.length;i++) x=d.forms[i][n];
+  for(i=0;!x&&d.layers&&i<d.layers.length;i++) x=MM_findObj(n,d.layers[i].document); return x;
+}
+
+function MM_dragLayer(objName,x,hL,hT,hW,hH,toFront,dropBack,cU,cD,cL,cR,targL,targT,tol,dropJS,et,dragJS) { //v3.0
+  //Copyright 1998 Macromedia, Inc. All rights reserved.
+  var i,j,aLayer,retVal,curDrag=null,NS=(navigator.appName=='Netscape'), curLeft, curTop;
+  if (!document.all && !document.layers) return false;
+  retVal = true; if(!NS && event) event.returnValue = true;
+  if (MM_dragLayer.arguments.length > 1) {
+    curDrag = MM_findObj(objName); if (!curDrag) return false;
+    if (!document.allLayers) { document.allLayers = new Array();
+      with (document) if (NS) { for (i=0; i<layers.length; i++) allLayers[i]=layers[i];
+        for (i=0; i<allLayers.length; i++) if (allLayers[i].document && allLayers[i].document.layers)
+          with (allLayers[i].document) for (j=0; j<layers.length; j++) allLayers[allLayers.length]=layers[j];
+      } else for (i=0;i<all.length;i++) if (all[i].style&&all[i].style.position) allLayers[allLayers.length]=all[i];}
+    curDrag.MM_dragOk=true; curDrag.MM_targL=targL; curDrag.MM_targT=targT;
+    curDrag.MM_tol=Math.pow(tol,2); curDrag.MM_hLeft=hL; curDrag.MM_hTop=hT;
+    curDrag.MM_hWidth=hW; curDrag.MM_hHeight=hH; curDrag.MM_toFront=toFront;
+    curDrag.MM_dropBack=dropBack; curDrag.MM_dropJS=dropJS;
+    curDrag.MM_everyTime=et; curDrag.MM_dragJS=dragJS;
+    curDrag.MM_oldZ = (NS)?curDrag.zIndex:curDrag.style.zIndex;
+    curLeft= (NS)?curDrag.left:curDrag.style.pixelLeft; curDrag.MM_startL = curLeft;
+    curTop = (NS)?curDrag.top:curDrag.style.pixelTop; curDrag.MM_startT = curTop;
+    curDrag.MM_bL=(cL<0)?null:curLeft-cL; curDrag.MM_bT=(cU<0)?null:curTop -cU;
+    curDrag.MM_bR=(cR<0)?null:curLeft+cR; curDrag.MM_bB=(cD<0)?null:curTop +cD;
+    curDrag.MM_LEFTRIGHT=0; curDrag.MM_UPDOWN=0; curDrag.MM_SNAPPED=false; //use in your JS!
+    document.onmousedown = MM_dragLayer; document.onmouseup = MM_dragLayer;
+    if (NS) document.captureEvents(Event.MOUSEDOWN|Event.MOUSEUP);
+  } else {
+    var theEvent = ((NS)?objName.type:event.type);
+    if (theEvent == 'mousedown') {
+      var mouseX = (NS)?objName.pageX : event.clientX + document.body.scrollLeft;
+      var mouseY = (NS)?objName.pageY : event.clientY + document.body.scrollTop;
+      var maxDragZ=null; document.MM_maxZ = 0;
+      for (i=0; i<document.allLayers.length; i++) { aLayer = document.allLayers[i];
+        var aLayerZ = (NS)?aLayer.zIndex:aLayer.style.zIndex;
+        if (aLayerZ > document.MM_maxZ) document.MM_maxZ = aLayerZ;
+        var isVisible = (((NS)?aLayer.visibility:aLayer.style.visibility).indexOf('hid') == -1);
+        if (aLayer.MM_dragOk != null && isVisible) with (aLayer) {
+          var parentL=0; var parentT=0;
+          if (!NS) { parentLayer = aLayer.parentElement;
+            while (parentLayer != null && parentLayer.style.position) {
+              parentL += parentLayer.offsetLeft; parentT += parentLayer.offsetTop;
+              parentLayer = parentLayer.parentElement; } }
+          var tmpX=mouseX-(((NS)?pageX:style.pixelLeft+parentL)+MM_hLeft);
+          var tmpY=mouseY-(((NS)?pageY:style.pixelTop +parentT)+MM_hTop);
+          var tmpW = MM_hWidth;  if (tmpW <= 0) tmpW += ((NS)?clip.width :offsetWidth);
+          var tmpH = MM_hHeight; if (tmpH <= 0) tmpH += ((NS)?clip.height:offsetHeight);
+          if ((0 <= tmpX && tmpX < tmpW && 0 <= tmpY && tmpY < tmpH) && (maxDragZ == null
+              || maxDragZ <= aLayerZ)) { curDrag = aLayer; maxDragZ = aLayerZ; } } }
+      if (curDrag) {
+        document.onmousemove = MM_dragLayer; if (NS) document.captureEvents(Event.MOUSEMOVE);
+        curLeft = (NS)?curDrag.left:curDrag.style.pixelLeft;
+        curTop = (NS)?curDrag.top:curDrag.style.pixelTop;
+        MM_oldX = mouseX - curLeft; MM_oldY = mouseY - curTop;
+        document.MM_curDrag = curDrag;  curDrag.MM_SNAPPED=false;
+        if(curDrag.MM_toFront) {
+          eval('curDrag.'+((NS)?'':'style.')+'zIndex=document.MM_maxZ+1');
+          if (!curDrag.MM_dropBack) document.MM_maxZ++; }
+        retVal = false; if(!NS) event.returnValue = false;
+    } } else if (theEvent == 'mousemove') {
+      if (document.MM_curDrag) with (document.MM_curDrag) {
+        var mouseX = (NS)?objName.pageX : event.clientX + document.body.scrollLeft;
+        var mouseY = (NS)?objName.pageY : event.clientY + document.body.scrollTop;
+        newLeft = mouseX-MM_oldX; newTop  = mouseY-MM_oldY;
+        if (MM_bL!=null) newLeft = Math.max(newLeft,MM_bL);
+        if (MM_bR!=null) newLeft = Math.min(newLeft,MM_bR);
+        if (MM_bT!=null) newTop  = Math.max(newTop ,MM_bT);
+        if (MM_bB!=null) newTop  = Math.min(newTop ,MM_bB);
+        MM_LEFTRIGHT = newLeft-MM_startL; MM_UPDOWN = newTop-MM_startT;
+        if (NS) {left = newLeft; top = newTop;}
+        else {style.pixelLeft = newLeft; style.pixelTop = newTop;}
+        if (MM_dragJS) eval(MM_dragJS);
+        retVal = false; if(!NS) event.returnValue = false;
+    } } else if (theEvent == 'mouseup') {
+      document.onmousemove = null;
+      if (NS) document.releaseEvents(Event.MOUSEMOVE);
+      if (NS) document.captureEvents(Event.MOUSEDOWN); //for mac NS
+      if (document.MM_curDrag) with (document.MM_curDrag) {
+        if (typeof MM_targL =='number' && typeof MM_targT == 'number' &&
+            (Math.pow(MM_targL-((NS)?left:style.pixelLeft),2)+
+             Math.pow(MM_targT-((NS)?top:style.pixelTop),2))<=MM_tol) {
+          if (NS) {left = MM_targL; top = MM_targT;}
+          else {style.pixelLeft = MM_targL; style.pixelTop = MM_targT;}
+          MM_SNAPPED = true; MM_LEFTRIGHT = MM_startL-MM_targL; MM_UPDOWN = MM_startT-MM_targT; }
+        if (MM_everyTime || MM_SNAPPED) eval(MM_dropJS);
+        if(MM_dropBack) {if (NS) zIndex = MM_oldZ; else style.zIndex = MM_oldZ;}
+        retVal = false; if(!NS) event.returnValue = false; }
+      document.MM_curDrag = null;
+    }
+    if (NS) document.routeEvent(objName);
+  } return retVal;
+}
+
+function MM_popupMsg(msg) { //v1.0
+  alert(msg);
+}
+
+function MM_goToURL() { //v3.0
+  var i, args=MM_goToURL.arguments; document.MM_returnValue = false;
+  for (i=0; i<(args.length-1); i+=2) eval(args[i]+".location='"+args[i+1]+"'");
+}
+
+function MM_displayStatusMsg(msgStr) { //v1.0
+  status=msgStr;
+  document.MM_returnValue = true;
+}
+//-->
+</script>
+</head>
+
+<body bgcolor="#000000" text="#FFFFFF" link="#FFFFFF" vlink="#FFFFFF" alink="#FFFFFF" onLoad="MM_displayStatusMsg('Oficiali \&quot;Nušauk Jas\&quot; svetainė');return document.MM_returnValue">
+<table border="0" cellspacing="0" cellpadding="0" width="464" align="center">
+  <tr> 
+    <td rowspan="2" width="250"><img src="gelytes.png" width="250" height="160"> 
+    </td>
+    <td width="164"><img src="antena.png" width="160" height="60"></td>
+    <td rowspan="2"><img src="gelytesk.png" width="250" height="160"></td>
+  </tr>
+  <tr> 
+    <td width="164"> 
+      <table border="1" cellspacing="0" cellpadding="0" bordercolor="#FFFFFF" align="center">
+        <tr> 
+          <td><img src="video.gif" width="160" height="120" border="0" alt="Video"></td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+  <tr> 
+    <td width="250" bgcolor="#CCCCCC">&nbsp;</td>
+    <td bgcolor="#CCCCCC" width="164">&nbsp;</td>
+    <td width="50" bgcolor="#CCCCCC">&nbsp;</td>
+  </tr>
+  <tr> 
+    <td width="250"><img src="durelesl.png" width="250" height="160"></td>
+    <td width="164" bgcolor="#999999">&nbsp;</td>
+    <td width="50"><img src="durelesr.png" width="250" height="160"></td>
+  </tr>
+</table>
+<div id="layPultelis" style="position:absolute; left:253px; top:282px; width:164px; height:160px; z-index:1" onMouseDown="MM_dragLayer('layPultelis','',0,0,0,0,true,false,-1,-1,-1,-1,false,false,0,'',false,'')"><img src="pultelis.gif" width="250" height="160" usemap="#mapPultelis" border="0"><map name="mapPultelis"><area shape="rect" coords="102,20,131,54" href="#" alt="Kas tai yra?" title="Kas tai yra?" onClick="MM_popupMsg('Tai yra nemokamas indavanders stiliaus lietuviškas žaidimas. Vaizdą iš šio žaidimo rodo šios svetainės televizorius.')" onMouseOver="MM_displayStatusMsg('Kas tai yra?');return document.MM_returnValue" onMouseOut="MM_displayStatusMsg('Oficiali \&quot;Nušauk Jas\&quot; svetainė');return document.MM_returnValue"><area shape="rect" coords="141,24,176,58" href="#" alt="Kodėl reikėtų jį atsiųsti?" title="Kodėl reikėtų jį atsiųsti?" onClick="MM_popupMsg('Jeigu jūs nemėgstate, arba dar geriau, jei jūs nekenčiate teksto analizių-interpretacijų. Bus jums smagu pašaudyti į jas (būtent į jas šiame žaidime ir tektų jums šaudyti) ir taip išgelbėti  žmones nuo begalinių kančių...')" onMouseOver="MM_displayStatusMsg('Kodėl reikėtų jį atsiųsti?');return document.MM_returnValue" onMouseOut="MM_displayStatusMsg('Oficiali \&quot;Nušauk Jas\&quot; svetainė');return document.MM_returnValue"><area shape="rect" coords="86,60,116,91" href="#" alt="Atsiųsti" title="Atsiųsti" onClick="MM_goToURL('parent','http://mekdrop.googlepages.com/NushaukJasGame.exe');return document.MM_returnValue" onMouseOver="MM_displayStatusMsg('Atsisiųsti');return document.MM_returnValue" onMouseOut="MM_displayStatusMsg('Oficiali \&quot;Nušauk Jas\&quot; svetainė');return document.MM_returnValue"><area shape="rect" coords="130,68,161,98" href="#" alt="Apie kūrėją" title="Apie kūrėją" onClick="MM_popupMsg('Šią svetainę ir žaidimą sukūrė 21 Interactive 2001-2002 metais.')" onMouseOver="MM_displayStatusMsg('Apie kūrėją');return document.MM_returnValue" onMouseOut="MM_displayStatusMsg('Oficiali \&quot;Nušauk Jas\&quot; svetainė');return document.MM_returnValue"><area shape="rect" coords="67,99,105,120" href="#" alt="Draugiškas puslapis 1" title="Draugiškas puslapis 1" onClick="MM_goToURL('parent','http://www.bitas.visiems.lt');return document.MM_returnValue" onMouseOver="MM_displayStatusMsg('Draugiškas puslapis 1');return document.MM_returnValue" onMouseOut="MM_displayStatusMsg('Oficiali \&quot;Nušauk Jas\&quot; svetainė');return document.MM_returnValue"><area shape="rect" coords="112,102,147,121" href="#" alt="Draugiškas puslapis 1" title="Draugiškas puslapis 1" onClick="MM_goToURL('parent','http://www.zpasaulis.lt');return document.MM_returnValue" onMouseOver="MM_displayStatusMsg('Draugiškas puslapis 1');return document.MM_returnValue" onMouseOut="MM_displayStatusMsg('Oficiali \&quot;Nušauk Jas\&quot; svetainė');return document.MM_returnValue"></map></div>
+<br>
+<br>
+<div align="right"> </div>
+</body>
+</html>

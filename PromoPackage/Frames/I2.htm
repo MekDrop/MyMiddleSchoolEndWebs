@@ -1,0 +1,192 @@
+<html>
+<head>
+<title></title>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1257">
+<style type="text/css">
+<!--
+a:active {  text-decoration: none}
+a:hover {  text-decoration: underline}
+a:link {  text-decoration: none}
+a:visited {  text-decoration: none; font-style: italic}
+-->
+</style>
+<script language="JavaScript">
+<!--
+function MM_findObj(n, d) { //v4.0
+  var p,i,x;  if(!d) d=document; if((p=n.indexOf("?"))>0&&parent.frames.length) {
+    d=parent.frames[n.substring(p+1)].document; n=n.substring(0,p);}
+  if(!(x=d[n])&&d.all) x=d.all[n]; for (i=0;!x&&i<d.forms.length;i++) x=d.forms[i][n];
+  for(i=0;!x&&d.layers&&i<d.layers.length;i++) x=MM_findObj(n,d.layers[i].document);
+  if(!x && document.getElementById) x=document.getElementById(n); return x;
+}
+
+function MM_changeProp(objName,x,theProp,theValue) { //v3.0
+  var obj = MM_findObj(objName);
+  if (obj && (theProp.indexOf("style.")==-1 || obj.style)) eval("obj."+theProp+"='"+theValue+"'");
+}
+
+function MM_timelinePlay(tmLnName, myID) { //v1.2
+  //Copyright 1997 Macromedia, Inc. All rights reserved.
+  var i,j,tmLn,props,keyFrm,sprite,numKeyFr,firstKeyFr,propNum,theObj,firstTime=false;
+  if (document.MM_Time == null) MM_initTimelines(); //if *very* 1st time
+  tmLn = document.MM_Time[tmLnName];
+  if (myID == null) { myID = ++tmLn.ID; firstTime=true;}//if new call, incr ID
+  if (myID == tmLn.ID) { //if Im newest
+    setTimeout('MM_timelinePlay("'+tmLnName+'",'+myID+')',tmLn.delay);
+    fNew = ++tmLn.curFrame;
+    for (i=0; i<tmLn.length; i++) {
+      sprite = tmLn[i];
+      if (sprite.charAt(0) == 's') {
+        if (sprite.obj) {
+          numKeyFr = sprite.keyFrames.length; firstKeyFr = sprite.keyFrames[0];
+          if (fNew >= firstKeyFr && fNew <= sprite.keyFrames[numKeyFr-1]) {//in range
+            keyFrm=1;
+            for (j=0; j<sprite.values.length; j++) {
+              props = sprite.values[j]; 
+              if (numKeyFr != props.length) {
+                if (props.prop2 == null) sprite.obj[props.prop] = props[fNew-firstKeyFr];
+                else        sprite.obj[props.prop2][props.prop] = props[fNew-firstKeyFr];
+              } else {
+                while (keyFrm<numKeyFr && fNew>=sprite.keyFrames[keyFrm]) keyFrm++;
+                if (firstTime || fNew==sprite.keyFrames[keyFrm-1]) {
+                  if (props.prop2 == null) sprite.obj[props.prop] = props[keyFrm-1];
+                  else        sprite.obj[props.prop2][props.prop] = props[keyFrm-1];
+        } } } } }
+      } else if (sprite.charAt(0)=='b' && fNew == sprite.frame) eval(sprite.value);
+      if (fNew > tmLn.lastFrame) tmLn.ID = 0;
+  } }
+}
+
+function MM_timelineGoto(tmLnName, fNew, numGotos) { //v2.0
+  //Copyright 1997 Macromedia, Inc. All rights reserved.
+  var i,j,tmLn,props,keyFrm,sprite,numKeyFr,firstKeyFr,lastKeyFr,propNum,theObj;
+  if (document.MM_Time == null) MM_initTimelines(); //if *very* 1st time
+  tmLn = document.MM_Time[tmLnName];
+  if (numGotos != null)
+    if (tmLn.gotoCount == null) tmLn.gotoCount = 1;
+    else if (tmLn.gotoCount++ >= numGotos) {tmLn.gotoCount=0; return}
+  jmpFwd = (fNew > tmLn.curFrame);
+  for (i = 0; i < tmLn.length; i++) {
+    sprite = (jmpFwd)? tmLn[i] : tmLn[(tmLn.length-1)-i]; //count bkwds if jumping back
+    if (sprite.charAt(0) == "s") {
+      numKeyFr = sprite.keyFrames.length;
+      firstKeyFr = sprite.keyFrames[0];
+      lastKeyFr = sprite.keyFrames[numKeyFr - 1];
+      if ((jmpFwd && fNew<firstKeyFr) || (!jmpFwd && lastKeyFr<fNew)) continue; //skip if untouchd
+      for (keyFrm=1; keyFrm<numKeyFr && fNew>=sprite.keyFrames[keyFrm]; keyFrm++);
+      for (j=0; j<sprite.values.length; j++) {
+        props = sprite.values[j];
+        if (numKeyFr == props.length) propNum = keyFrm-1 //keyframes only
+        else propNum = Math.min(Math.max(0,fNew-firstKeyFr),props.length-1); //or keep in legal range
+        if (sprite.obj != null) {
+          if (props.prop2 == null) sprite.obj[props.prop] = props[propNum];
+          else        sprite.obj[props.prop2][props.prop] = props[propNum];
+      } }
+    } else if (sprite.charAt(0)=='b' && fNew == sprite.frame) eval(sprite.value);
+  }
+  tmLn.curFrame = fNew;
+  if (tmLn.ID == 0) eval('MM_timelinePlay(tmLnName)');
+}
+
+function MM_initTimelines() { //v4.0
+    //MM_initTimelines() Copyright 1997 Macromedia, Inc. All rights reserved.
+    var ns = navigator.appName == "Netscape";
+    var ns4 = (ns && parseInt(navigator.appVersion) == 4);
+    var ns5 = (ns && parseInt(navigator.appVersion) > 4);
+    document.MM_Time = new Array(1);
+    document.MM_Time[0] = new Array(16);
+    document.MM_Time["EFX"] = document.MM_Time[0];
+    document.MM_Time[0].MM_Name = "EFX";
+    document.MM_Time[0].fps = 15;
+    document.MM_Time[0][0] = new String("behavior");
+    document.MM_Time[0][0].frame = 10;
+    document.MM_Time[0][0].value = "MM_changeProp('mgxv','','innerText','Pasirinkite skyrelį:','DIV')";
+    document.MM_Time[0][1] = new String("behavior");
+    document.MM_Time[0][1].frame = 15;
+    document.MM_Time[0][1].value = "MM_changeProp('mgxv','','innerText','PAsirinkite skyrelį:','DIV')";
+    document.MM_Time[0][2] = new String("behavior");
+    document.MM_Time[0][2].frame = 20;
+    document.MM_Time[0][2].value = "MM_changeProp('mgxv','','innerText','PASirinkite skyrelį:','DIV')";
+    document.MM_Time[0][3] = new String("behavior");
+    document.MM_Time[0][3].frame = 25;
+    document.MM_Time[0][3].value = "MM_changeProp('mgxv','','innerText','PASirinkite skyrelį:','DIV')";
+    document.MM_Time[0][4] = new String("behavior");
+    document.MM_Time[0][4].frame = 30;
+    document.MM_Time[0][4].value = "MM_changeProp('mgxv','','innerText','PASIRinkite skyrelį:','DIV')";
+    document.MM_Time[0][5] = new String("behavior");
+    document.MM_Time[0][5].frame = 35;
+    document.MM_Time[0][5].value = "MM_changeProp('mgxv','','innerText','PaSIRInkite skyrelį:','DIV')";
+    document.MM_Time[0][6] = new String("behavior");
+    document.MM_Time[0][6].frame = 40;
+    document.MM_Time[0][6].value = "MM_changeProp('mgxv','','innerText','PasIRINkite skyrelį:','DIV')";
+    document.MM_Time[0][7] = new String("behavior");
+    document.MM_Time[0][7].frame = 45;
+    document.MM_Time[0][7].value = "MM_changeProp('mgxv','','innerText','PasiRINKite skyrelį:','DIV')";
+    document.MM_Time[0][8] = new String("behavior");
+    document.MM_Time[0][8].frame = 50;
+    document.MM_Time[0][8].value = "MM_changeProp('mgxv','','innerText','PasirINKIte skyrelį:','DIV')";
+    document.MM_Time[0][9] = new String("behavior");
+    document.MM_Time[0][9].frame = 55;
+    document.MM_Time[0][9].value = "MM_changeProp('mgxv','','innerText','PasiriNKITe skyrelį:','DIV')";
+    document.MM_Time[0][10] = new String("behavior");
+    document.MM_Time[0][10].frame = 60;
+    document.MM_Time[0][10].value = "MM_changeProp('mgxv','','innerText','PasirinKITE skyrelį:','DIV')";
+    document.MM_Time[0][11] = new String("behavior");
+    document.MM_Time[0][11].frame = 65;
+    document.MM_Time[0][11].value = "MM_changeProp('mgxv','','innerText','PasirinkITE skyrelį:','DIV')";
+    document.MM_Time[0][12] = new String("behavior");
+    document.MM_Time[0][12].frame = 70;
+    document.MM_Time[0][12].value = "MM_changeProp('mgxv','','innerText','PasirinkiTE skyrelį:','DIV')";
+    document.MM_Time[0][13] = new String("behavior");
+    document.MM_Time[0][13].frame = 75;
+    document.MM_Time[0][13].value = "MM_changeProp('mgxv','','innerText','PasirinkitE skyrelį:','DIV')";
+    document.MM_Time[0][14] = new String("behavior");
+    document.MM_Time[0][14].frame = 80;
+    document.MM_Time[0][14].value = "MM_changeProp('mgxv','','innerText','Pasirinkite skyrelį:','DIV')";
+    document.MM_Time[0][15] = new String("behavior");
+    document.MM_Time[0][15].frame = 295;
+    document.MM_Time[0][15].value = "MM_timelineGoto('EFX','1')";
+    document.MM_Time[0].lastFrame = 295;
+    for (i=0; i<document.MM_Time.length; i++) {
+        document.MM_Time[i].ID = null;
+        document.MM_Time[i].curFrame = 0;
+        document.MM_Time[i].delay = 1000/document.MM_Time[i].fps;
+    }
+}
+//-->
+</script>
+</head>
+
+<body bgcolor="#9999FF" text="#000000" leftmargin="0" topmargin="0" link="#FFFFFF" vlink="#FFFFFF" alink="#FFFFFF" onLoad="MM_timelinePlay('EFX')">
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td width="20%"><img src="Logo.gif" width="156" height="81" align="texttop"></td>
+    <td width="80%">
+      <table width="100%" border="0" cellspacing="5" cellpadding="5" height="100%">
+        <tr background="UpBackGround.jpg" align="center" valign="middle"> 
+          <td colspan="4" nowrap> 
+            <div pagex="0" pagey="0" id="mgxv" visibility="show" above=""> <font face="Georgia, Times New Roman, Times, serif">Pasirinkite 
+              skyrelį:</font></div>
+          </td>
+        </tr>
+        <tr> 
+          <td width="25%" nowrap> 
+            <div align="center"><a href="about.htm" target="fraDoc">Apie Mane</a></div>
+          </td>
+          <td width="25%" nowrap> 
+            <div align="center"><a href="paslaugos.htm" target="fraDoc">Paslaugos</a></div>
+          </td>
+          <td width="25%" nowrap> 
+            <div align="center"><a href="pvz.htm" target="fraDoc">Pavyzdžiai</a></div>
+          </td>
+          <td width="25%" nowrap> 
+            <div align="center"><a href="susisiekimas.htm" target="fraDoc">Kaip 
+              Susisiekti?</a></div>
+          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+</body>
+</html>

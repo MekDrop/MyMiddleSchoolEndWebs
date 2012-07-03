@@ -1,0 +1,28 @@
+	document.write('<form name="frmSearch" method="get" action="search.htm">');
+	document.write('<hr>');
+	document.write('<table width="160" border="0" cellpadding="0" cellspacing="0" align="center">');
+	document.write('<tr> ');
+	document.write('<td width="160" align="left" valign="middle"><font color="#CCFF00"><b>Paieðka:');
+	document.write('</b></font></td>');
+	document.write('</tr>');
+	document.write('<tr> ');
+	document.write('<td align="left" valign="middle"> ');
+	document.write('<div align="center"> ');
+	document.write('<input type="text" name="text" size="20" onMouseOver="MM_changeProp(\'layWhatIsThis\',\'\',\'innerText\',\'Jeigu nesugebate ko nors surasti ðioje svetainëje, pasinaudokite ðia paieðka.\',\'DIV\')" onMouseOut="MM_changeProp(\'layWhatIsThis\',\'\',\'innerText\',\'Uþveskite pelæ ant pasirinkto meniu punkto ir suþinokite kas tai yra.\',\'DIV\')" onFocus="MM_changeProp(\'layWhatIsThis\',\'\',\'innerText\',\'Áveskite ieðkomà frazæ ir spauskite \&quot;Ieðkoti\&quot;.\',\'DIV\')" onlosecapture="MM_changeProp(\'layWhatIsThis\',\'\',\'innerText\',\'Uþveskite pelæ ant pasirinkto meniu punkto ir suþinokite kas tai yra.\',\'DIV\')">');
+	document.write('</div>');
+	document.write('</td>');
+	document.write('</tr>');
+	document.write('<tr> ');
+	document.write('<td width="160" align="left" valign="middle"><font color="#FFFFFF" size="1"> <label onMouseOver="MM_changeProp(\'layWhatIsThis\',\'\',\'innerText\',\'Jeigu norite ieðkoti sulietuvinimø, paþymëkite ðá pasirinkimo elementà.\',\'DIV\')" onMouseOut="MM_changeProp(\'layWhatIsThis\',\'\',\'innerText\',\'Uþveskite pelæ ant pasirinkto meniu punkto ir suþinokite kas tai yra.\',\'DIV\')"> <input type="radio" name="searchwhat" value="0" checked> Sulietuvinimai</label> <label onMouseOver="MM_changeProp(\'layWhatIsThis\',\'\',\'innerText\',\'Paþymëkite ðá pasirinkimo elementà, jeigu jûs norite ieðkoti reikiamos frazës programos lietuvinimui.\',\'DIV\')" onMouseOut="MM_changeProp(\'layWhatIsThis\',\'\',\'innerText\',\'Uþveskite pelæ ant pasirinkto meniu punkto ir suþinokite kas tai yra.\',\'DIV\')"><input type="radio" name="searchwhat" value="1"> Vertimai</label></td>');
+	document.write('</tr>');
+	document.write('<tr> ');
+	document.write('<td align="left" valign="middle"> ');
+	document.write('<div align="right"> ');
+	document.write('<input type="submit" name="Submit" value="Ieðkoti"  onMouseOut="MM_changeProp(\'layWhatIsThis\',\'\',\'innerText\',\'Uþveskite pelæ ant pasirinkto meniu punkto ir suþinokite kas tai yra.\',\'DIV\')" onMouseOver="MM_changeProp(\'layWhatIsThis\',\'\',\'innerText\',\'Jeigu jau paraðëte ko ieðkoti, spauskite ðá mygtukà.\',\'DIV\')">');
+	document.write('</div>');
+	document.write('</td>');
+	document.write('</tr>');
+	document.write('</table>');
+//	document.write('<hr>');
+	document.write('</form>');
+	

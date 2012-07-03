@@ -1,0 +1,1 @@
+Visi siuntiniai guli @Downloads kataloge. Reikia perkopijuoti jo turiná á pasirinktà Downloads katalogà prieð naudojant vienà ið ðiø versijø.

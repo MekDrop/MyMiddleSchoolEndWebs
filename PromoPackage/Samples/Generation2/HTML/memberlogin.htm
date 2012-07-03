@@ -1,0 +1,128 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1257">
+<style type="text/css">
+<!--
+@import url(../CSS/body-fixed.css);
+@import "../CSS/menu.css";
+-->
+</style>
+<link rel="stylesheet" href="../CSS/body-fixed.css">
+<link rel="stylesheet" href="../CSS/menu.css">
+<SCRIPT LANGUAGE="JavaScript">
+<!-- begin script
+function checkPswd2(ext) {
+  if ((document.pswdForm.pswd.value == null) || (document.pswdForm.pswd.value == ''))
+    alert('Blogas Slaptažodis.');
+  else this.location.href = document.pswdForm.pswd.value + ext;
+}
+// end script -->
+</SCRIPT>
+
+<SCRIPT LANGUAGE="JavaScript">
+<!-- begin script
+function checkPswd(ext) {
+  window.external.AutoCompleteSaveForm(pswdForm);
+  if (document.pswdForm.pswd.value == 'bitas') {
+    document.pswdForm.pswd.value = 'bitasklnr';
+  }
+  else { 
+    document.pswdForm.pswd.value = ''; 
+  }	 
+  if ((document.pswdForm.pswd.value == null) || (document.pswdForm.pswd.value == '')){
+document.clear()
+	document.write('<html><head>');
+	document.write('<meta http-equiv="Content-Type" content="text/html; charset=windows-1257">');
+	document.write('<style type="text/css">');
+	document.write('<!--');
+	document.write('@import url(../CSS/body-fixed.css);');
+	document.write('@import "../CSS/menu.css";');
+	document.write('ul {  list-style-type: square; color: #6699CC}');
+	document.write('-->');
+	document.write('</style>');
+	document.write('<link rel="stylesheet" href="../CSS/body-fixed.css">');
+	document.write('<link rel="stylesheet" href="../CSS/menu.css">');
+	document.write('</head>');
+	document.write('<body bgcolor="#FFFFFF" background="../Images/backgroundwer.jpg" leftmargin="3" topmargin="3">');
+	document.write('<H2 align="left">');
+	document.write('<Font Color="Blue">');
+	document.write('Blogas slaptažodis');
+	document.write('</Font></H2>');
+	document.write('Slaptažodis, kurį Jūs ką tik įvedėte yra blogas (t.y. su negalima apslankyti <i>#Bitas Klube</i>. Šią problemą galima išspręsti taip:');
+	document.write('<ul>');
+	document.write('<li><font color="Black">Pasitikrinkite ar jis būtent toks yra, kokį Jūs įvedėte.</font></li>');
+	document.write('<li><font color="Black">Jeigu nežinote slaptažodžio ir ką tik pabandėte jį atspėji, nesikankinkite ilgiau spėliodami, o tapkite <i>#Bitas Klubo</i> nariais. Klubo narystė yra <u>nemokama</u>.</font></li>');
+	document.write('<li><font color="Black">Jeigu užmiršote slaptažodį parašykite, kuriam nors iš šio puslapio administratorių laišką, arba paklauskite IRC kanale #Bitas.</font></li>');
+	document.write('</ul>');
+	document.write('<div align="center">');
+	document.write('<input type="button" value="< Atgal" checked language="JavaScript" onclick="window.history.back();">');
+	document.write('</div>');
+	document.write('</body>');
+	document.write('</html>');
+}
+  else { 
+     this.location.href = document.pswdForm.pswd.value + ext;
+  }
+}
+// end script -->
+</SCRIPT>
+</head>
+<body bgcolor="#FFFFFF" background="../Images/backgroundwer.jpg" leftmargin="3" topmargin="3">
+<table width="100%" border="0" cellspacing="0" cellpadding="0" height="85%">
+  <tr>
+				<td colspan="2" rowspan="2"> 
+      <div align="center">
+						<form name="pswdForm">
+          <table width="293" border="0" cellspacing="0" cellpadding="2" height="159">
+            <tr bgcolor="#9999FF"> 
+              <td colspan="6"> 
+                <div align="center"><font color="#FFFFFF"><b>Prašome Įeiti</b></font></div>
+              </td>
+            </tr>
+            <tr bgcolor="#CCFFCC"> 
+              <td>&nbsp;</td>
+              <td colspan="5"> 
+                <div align="center"><font size="2" face="Arial,Helvetica"><br>
+                  Įvesti savo slaptažodį ir spauskite &quot;Įeiti.&quot;</font></div>
+              </td>
+            </tr>
+            <tr bgcolor="#CCFFCC"> 
+              <td></td>
+              <td>&nbsp;</td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+            </tr>
+            <tr bgcolor="#CCFFCC"> 
+              <td height="29">&nbsp;</td>
+              <td colspan="2" height="29">Slaptažodis: </td>
+              <td height="29"> 
+                <input type="password" name="pswd" size=22 maxlength=40>
+              </td>
+              <td height="29"> 
+                <input type="button" value="Įeiti" onClick="checkPswd('.html')" name="button">
+              </td>
+              <td height="29">&nbsp;</td>
+            </tr>
+            <tr bgcolor="#CCFFCC"> 
+              <td colspan="6"> 
+                <hr noshade color=#9999FF>
+                <div align="center"><a href="membernewmemberinfo.htm">Tapti #Bitas 
+                  klubo nariu.</a><br>
+                </div>
+              </td>
+            </tr>
+          </table>
+        </form>
+					</div>
+    </td>
+			</tr>
+  <tr>
+				
+			</tr>
+</table>
+						
+						<p>&nbsp;</p>
+					</body>
+</html>
